@@ -1,3 +1,4 @@
+
 import { Content } from "./content";
 
 export class List {
@@ -6,12 +7,26 @@ export class List {
   constructor(item: Content) {
     this._items = []; // initialize array
     this._items[0] = item; // set the value of the item at the first index of the array
-    this.addContent();
   }
-  get items():Content[] {
+  get items(): Content[] {
     return this._items;
   }
-  addContent() {
-    return ++List.contentCount;
+  // addContent() {
+  //   return this.items.push;
+  // }
+  // lengthOfContent(): number {
+  //   return this.items.length;
+  // }
+
+  // displayContent() {
+  //   for (let i = 0; i < this.lengthOfContent(); i++) {
+  //     return console.log(this.lengthOfContent);
+  //   }
+  // }
+  increaseCount() {
+    return List.contentCount++;
   }
+
+
+
 }
