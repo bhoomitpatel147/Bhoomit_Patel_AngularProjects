@@ -1,5 +1,20 @@
-<div>
-  The Author name is {{ ContentItem1.type }}
-  The Author name is {{ ContentItem2.type }}
+<div class="container">
+  <!-- <span [innerHTML]="this.ListOfContent.displayContent(0)"></span>
+  <span [innerHTML]="this.ListOfContent.displayContent(1)"></span>
+  <span [innerHTML]="this.ListOfContent.displayContent(2)"></span>
+  <span [innerHTML]="this.ListOfContent.displayContent(3)"></span>
+  <span [innerHTML]="this.ListOfContent.displayContent(4)"></span> -->
 
+  <script>
+    for (let i = 0; i < 5; i++) {
+      spanTag = document.createElement('div');
+      spanTag.innerText = `<span [innerHTML]="this.ListOfContent.displayContent(i)"></span>`;
+      console.log(spanTag);
+      document.querySelector('div').appendChild(spanTag);
+    }
+  </script>
+</div>
+
+<div>
+  <span [innerHTML]="this.ListOfContent.displayContent(5)"></span>
 </div>
