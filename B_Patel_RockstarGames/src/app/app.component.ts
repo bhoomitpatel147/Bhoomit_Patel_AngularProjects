@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Content } from "./models/content";
-import { List } from "./models/list";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +16,6 @@ export class AppComponent {
   ContentItem4: Content;
   ContentItem5: Content;
 
-  ListOfContent: List = new List;
 
 
 
@@ -72,11 +70,7 @@ export class AppComponent {
       hashtags: ["#max_payne_3", "#shooting", "#third-person_shooter", "#gun"]
     };
 
-    this.ListOfContent.addContent(this.ContentItem1);
-    this.ListOfContent.addContent(this.ContentItem2);
-    this.ListOfContent.addContent(this.ContentItem3);
-    this.ListOfContent.addContent(this.ContentItem4);
-    this.ListOfContent.addContent(this.ContentItem5);
+
 
 
     // console.log("View the array of items in the list: ", this.ListOfContent);
