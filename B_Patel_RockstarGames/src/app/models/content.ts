@@ -5,5 +5,5 @@ export interface Content {
   author: string;
   imageLink?: string;
   type: string;
-  hashtags?: Array<string>;
+  hashtags?: string[];
 }

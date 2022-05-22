@@ -13,7 +13,6 @@ export class ContentListComponent implements OnInit {
 
   constructor() {
 
-
     this.ContentListItem = [{
       id: 0,
       title: "Grand Theft Auto: Mission Pack #1 - London 1969",

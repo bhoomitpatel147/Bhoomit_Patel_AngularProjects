@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { Content } from '../models/content';
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() contentItem?: Content;
+  private _items: Content[];
+  constructor() {
+    this._items = []
+  }
+
+
+  get items(): Content[] {
+    return this._items;
+  }
 
   ngOnInit(): void {
   }
