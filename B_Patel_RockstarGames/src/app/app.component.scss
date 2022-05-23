@@ -1,0 +1,34 @@
+:host {
+    app-content-list h1 {
+
+        // :host app-content-card {
+        //     :host {
+        display: block;
+        color: red;
+        width: 780px;
+        border: 2px solid blueviolet;
+        margin: 10px auto;
+        padding: 10px;
+    }
+}
+
+
+//     }
+// }
+
+
+
+img {
+    width: 770px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
+
+p.hashtags {
+    color: blue;
+}
