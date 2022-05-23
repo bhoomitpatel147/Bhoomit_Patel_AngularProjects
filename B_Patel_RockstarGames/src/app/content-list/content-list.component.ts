@@ -30,7 +30,6 @@ export class ContentListComponent implements OnInit {
       author: "Mark Randel",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/2/22/Monster_Truck_Madness_2_Coverart.png",
       type: "Racing",
-      hashtags: ["#race", "#Multiplayer Race", "#carrace"]
     },
 
     {

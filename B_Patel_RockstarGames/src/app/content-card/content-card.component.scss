@@ -1,22 +1,36 @@
-// :host {
-//     display: block;
-//     width: 780px;
-//     border: 2px solid blueviolet;
-//     margin: 10px auto;
-//     padding: 10px;
-// }
+:host {
+    display: block;
+    width: 780px;
+    border: 2px solid blueviolet;
+    margin: 10px auto;
+    padding: 10px;
 
-// img {
-//     width: 770px;
-//     display: block;
-//     margin: 0 auto;
-//     cursor: pointer;
-// }
+    &.even {
+        background-color: lightgrey;
+    }
 
-// h1 {
-//     text-align: center;
-// }
+    &.odd {
+        background-color: white;
+    }
 
-// p.hashtags {
-//     color: blue;
-// }
+}
+
+:host[class=""] {
+    background-color: green;
+}
+
+
+img {
+    width: 770px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
+
+p.hashtags {
+    color: blue;
+}
