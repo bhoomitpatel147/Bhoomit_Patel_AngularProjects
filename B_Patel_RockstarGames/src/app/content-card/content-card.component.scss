@@ -6,18 +6,8 @@
     padding: 10px;
     border-radius: 30px;
 
-    &.even {
-        background-color: lightgrey;
-    }
 
-    &.odd {
-        background-color: white;
-    }
 
-}
-
-:host[class=""] {
-    background-color: green;
 }
 
 
@@ -39,6 +29,43 @@ h1 {
     justify-content: space-evenly;
     background-color: antiquewhite;
     padding: 5px;
-    margin: 5px;
+    margin: 15px 5px;
     flex-direction: row;
+    border-radius: 5px;
+}
+
+
+.type {
+    border: 1px solid black;
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(29, 88, 136);
+    animation: blink 5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        color: red;
+    }
+
+    20% {
+        color: green;
+    }
+
+    40% {
+        color: yellow;
+    }
+
+    60% {
+        color: blue;
+    }
+
+    80% {
+        color: orange;
+    }
+
+    100% {
+        color: white;
+    }
 }

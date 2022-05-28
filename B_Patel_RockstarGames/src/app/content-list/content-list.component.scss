@@ -1,0 +1,31 @@
+:host {
+
+    .thirdShooterCard {
+        background-color: black;
+        color: green;
+    }
+
+    .sportsCard {
+        color: #F4A896;
+        background-color: #358597;
+    }
+
+    .racingCard {
+        color: #b1624eff;
+        background-color: #5cc8d7ff;
+    }
+
+    .platformerCard {
+        color: #adefd1ff;
+        background-color: #00203fff;
+    }
+
+
+    h2 {
+        text-align: center;
+        background-color: rgb(244, 121, 14);
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 2em;
+    }
+}

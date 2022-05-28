@@ -9,7 +9,7 @@
 
     <h2 *ngIf="contentItem && contentItem.author">Author: {{contentItem.author}}</h2>
 
-    <h2 *ngIf="contentItem && contentItem.type">Type: {{contentItem.type}}</h2>
+    <h2 class="type" *ngIf="contentItem && contentItem.type">Type: {{contentItem.type}}</h2>
 
     <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
         <span *ngFor="let hashtag of contentItem.hashtags">

@@ -6,11 +6,11 @@ import { Content } from '../models/content';
 })
 export class TypeFilterPipe implements PipeTransform {
 
-  transform(contetItem: Content[], optionalStr: string = "Sports"): Content[] {
+  transform(contetItem: Content[], optionalStr?: string): Content[] {
     return contetItem.filter
       (individualContent => {
-        return !individualContent.type?.length || individualContent.type === optionalStr;
-      });;
+        return optionalStr == individualContent.type;
+      });
   }
 
 }

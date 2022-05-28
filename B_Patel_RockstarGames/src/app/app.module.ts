@@ -11,7 +11,7 @@ import { TypeFilterPipe } from './pipes/type-filter.pipe';
     AppComponent,
     ContentListComponent,
     ContentCardComponent,
-    TypeFilterPipe
+    TypeFilterPipe,
   ],
   imports: [
     BrowserModule
