@@ -19,7 +19,6 @@ export class ContentListComponent implements OnInit {
       body: "This is an expansion pack for the 1998 action-adventure game Grand Theft Auto, developed by Rockstar Canada and published by Rockstar Games.",
       author: "Ray Larabie/Dan Houser",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/d/de/Grand_Theft_Auto_London_1969.jpg",
-      type: "Action-adventure",
       hashtags: ["grandtheftautolondon1969", "GTA", "funRockstar"]
     },
 
@@ -76,7 +75,7 @@ export class ContentListComponent implements OnInit {
       body: "Bully is an action-adventure game set in an open world environment and played from a third-person perspective. The game's single-player mode has the player control a high school student—teenage rebel, James Hopkins. Throughout the story, Jimmy rises through the ranks of the school groups, archetypes which include Bullies, Nerds, Preppies, Greasers, and Jocks. Players complete missions—linear scenarios with set objectives—to progress through the story.",
       author: "Steven Olds",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/6/63/Bully_frontcover.jpg",
-      type: "Action-adventure",
+      type: "Sports",
       hashtags: ["Bull", "playstation", "action"]
     },
     {

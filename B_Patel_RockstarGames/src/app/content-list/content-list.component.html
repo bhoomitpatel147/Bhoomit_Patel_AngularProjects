@@ -9,7 +9,7 @@
 
 
 <div class="list">
-  <app-content-card *ngFor="let item of ContentListItem; index as i; even as isFirst; odd as isSecond"
+  <app-content-card *ngFor="let item of ContentListItem | typeFilter; index as i; even as isFirst; odd as isSecond"
     [contentItem]="item" class="content-{{i}}" [class.even]="isFirst" [class.odd]="isSecond">
   </app-content-card>
 </div>
