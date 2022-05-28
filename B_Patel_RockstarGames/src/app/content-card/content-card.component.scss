@@ -1,9 +1,10 @@
 :host {
     display: block;
     width: 780px;
-    border: 2px solid blueviolet;
+    border: 5px double blueviolet;
     margin: 10px auto;
     padding: 10px;
+    border-radius: 30px;
 
     &.even {
         background-color: lightgrey;
@@ -31,6 +32,13 @@ h1 {
     text-align: center;
 }
 
-p.hashtags {
+.hashtags {
     color: blue;
+    border: 1px solid seagreen;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+    padding: 5px;
+    margin: 5px;
+    flex-direction: row;
 }

@@ -15,12 +15,12 @@ export class ContentListComponent implements OnInit {
 
     this.ContentListItem = [{
       id: 0,
-      title: "Grand Theft Auto: Mission Pack #1 - London 1969",
+      title: "Grand Theft Auto: Mission Pack 1 - London 1969",
       body: "This is an expansion pack for the 1998 action-adventure game Grand Theft Auto, developed by Rockstar Canada and published by Rockstar Games.",
       author: "Ray Larabie/Dan Houser",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/d/de/Grand_Theft_Auto_London_1969.jpg",
       type: "Action-adventure",
-      hashtags: ["#grandtheftautolondon1969", "#GTA", "#funRockstar"]
+      hashtags: ["grandtheftautolondon1969", "GTA", "funRockstar"]
     },
 
     {
@@ -30,7 +30,7 @@ export class ContentListComponent implements OnInit {
       author: "Mark Randel",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/2/22/Monster_Truck_Madness_2_Coverart.png",
       type: "Racing",
-      // hashtags: ["#race", "#Multiplayer Race", "#carrace"]
+      // hashtags: ["race", "Multiplayer Race", "carrace"]
     },
 
     {
@@ -40,7 +40,7 @@ export class ContentListComponent implements OnInit {
       author: "Paul Munro",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/7/75/Earthworm_Jim_3D_cover.jpg",
       type: "Platformer",
-      hashtags: ["#earthwormjim3d", "#platformer"]
+      hashtags: ["earthwormjim3d", "platformer"]
     },
 
     {
@@ -50,7 +50,7 @@ export class ContentListComponent implements OnInit {
       author: "Z-axis",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/1/18/Thrasher_-_Skate_and_Destroy_Coverart.jpg",
       type: "Sports",
-      hashtags: ["#thrasherpresentsskateanddestroy", "#playstation", "realSport"]
+      hashtags: ["thrasherpresentsskateanddestroy", "playstation", "realSport"]
     },
 
     {
@@ -60,8 +60,34 @@ export class ContentListComponent implements OnInit {
       author: "Paul MacPherson",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/2/21/Max_Payne_3_Cover.jpg",
       type: "Third-person shooter",
-      hashtags: ["#max_payne_3", "#shooting", "#third-person_shooter", "#gun"]
-    }]
+      hashtags: ["max_payne_3", "shooting", "third-person_shooter", "gun"]
+    },
+    {
+      id: 5,
+      title: "Smuggler's Run",
+      body: "Smuggler's Mission: New to a local smuggling gang, the player's job is to smuggle cargo through three consecutive levels (forest, desert, and snow) with about ten missions per level. In nearly all missions they must evade the U.S. border patrol, the CIA, or rival smuggling gangs.",
+      author: "Wing S. Cho",
+      imageLink: "https://upload.wikimedia.org/wikipedia/en/b/b4/Smugglers_Run_PS2.jpg",
+      hashtags: ["smuggler", "running"]
+    },
+    {
+      id: 6,
+      title: "Bully (video game)",
+      body: "Bully is an action-adventure game set in an open world environment and played from a third-person perspective. The game's single-player mode has the player control a high school student—teenage rebel, James Hopkins. Throughout the story, Jimmy rises through the ranks of the school groups, archetypes which include Bullies, Nerds, Preppies, Greasers, and Jocks. Players complete missions—linear scenarios with set objectives—to progress through the story.",
+      author: "Steven Olds",
+      imageLink: "https://upload.wikimedia.org/wikipedia/en/6/63/Bully_frontcover.jpg",
+      type: "Action-adventure",
+      hashtags: ["Bull", "playstation", "action"]
+    },
+    {
+      id: 7,
+      title: "Beaterator",
+      body: "Beaterator is a music mixer released in September 2009 by Rockstar Games for the PlayStation Portable and in December 2009 for iOS. Beaterator was developed by Rockstar Leeds in collaboration with Timbaland.",
+      author: "Rob Nelson",
+      imageLink: "https://upload.wikimedia.org/wikipedia/en/e/ea/Beaterator_cover.jpg",
+      hashtags: ["beatrator", "shooting", "third-person_shooter", "gun"]
+    }
+    ]
 
   }
 

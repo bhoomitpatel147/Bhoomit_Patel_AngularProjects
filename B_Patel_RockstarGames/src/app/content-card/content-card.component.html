@@ -10,7 +10,14 @@
     <h2 *ngIf="contentItem && contentItem.author">Author: {{contentItem.author}}</h2>
 
     <h2 *ngIf="contentItem && contentItem.type">Type: {{contentItem.type}}</h2>
-    <p class="hashtags" *ngIf="contentItem && contentItem.hashtags">{{contentItem.hashtags.join(' ')}}</p>
+
+    <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
+        <span *ngFor="let hashtag of contentItem.hashtags">
+            #{{ hashtag }}
+        </span>
+        <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->
+    </div>
+    <!-- <p class="hashtags" *ngIf="contentItem && contentItem.hashtags">{{contentItem.hashtags.join(' ')}}</p> -->
 
     <!-- <ng-template #elseBlockNameIsWhateverYouWant>
         <p class="not-found">No body content found</p>
