@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { TypeFilterPipe } from './pipes/type-filter.pipe';
-import { SearchAuthorPipe } from './pipes/search-author.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,6 @@ import { SearchAuthorPipe } from './pipes/search-author.pipe';
     ContentListComponent,
     ContentCardComponent,
     TypeFilterPipe,
-    SearchAuthorPipe,
   ],
   imports: [
     BrowserModule
