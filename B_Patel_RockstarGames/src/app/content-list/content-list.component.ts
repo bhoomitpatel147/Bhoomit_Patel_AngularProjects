@@ -114,11 +114,19 @@ export class ContentListComponent implements OnInit {
     }
     else {
       button.textContent = `${authorValue}'s content doesn't exist in List`;
-      input.textContent = `${authorValue}'s content doesn't exist in List`;
+      input.value = `${authorValue}'s content doesn't exist in List`;
       button.style.color = 'grey';
       input.style.color = 'grey';
 
     }
+  }
+
+  clearInput() {
+    let input = (<HTMLInputElement>document.querySelector('input'));
+    let button = document.querySelector('button') as HTMLElement;
+    button.textContent = 'Click me to find Author';
+    button.style.color = 'grey';
+    input.value = "";
   }
 
 }
