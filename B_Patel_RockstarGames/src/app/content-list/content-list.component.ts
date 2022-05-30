@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { find } from 'rxjs';
 import { Content } from '../models/content';
 
 @Component({
@@ -9,7 +10,8 @@ import { Content } from '../models/content';
 export class ContentListComponent implements OnInit {
 
   ContentListItem: Content[];
-
+  searchAuthor: boolean = false;
+  // searchAuthorName: string;
 
   constructor() {
 
@@ -93,5 +95,29 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkAuthor(authorValue: string) {
+    console.log(authorValue);
+    let button = document.querySelector('button') as HTMLElement;
+    let input = (<HTMLInputElement>document.querySelector('input'));
+
+    let findAuthor = this.ContentListItem.find(el =>
+
+      el.author.toLowerCase() == authorValue.toLowerCase()
+    );
+    if (findAuthor) {
+      console.log(findAuthor);
+      button.textContent = `${authorValue}'s content exist in List`;
+      input.value = `${authorValue}'s content exist in List`;
+      button.style.color = 'blue';
+      input.style.color = 'blue';
+    }
+    else {
+      button.textContent = `${authorValue}'s content doesn't exist in List`;
+      input.textContent = `${authorValue}'s content doesn't exist in List`;
+      button.style.color = 'grey';
+      input.style.color = 'grey';
+
+    }
+  }
 
 }

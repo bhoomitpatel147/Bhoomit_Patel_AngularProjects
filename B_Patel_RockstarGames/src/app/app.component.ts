@@ -11,6 +11,7 @@ export class AppComponent {
 
   title = 'B-Patel-RockstarGames';
 
+  filterAuthor: string = "Default";
 
   constructor() {
 
