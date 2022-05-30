@@ -110,6 +110,7 @@ export class ContentListComponent implements OnInit {
       input.value = `${authorValue}'s content exist in List`;
       button.style.color = 'blue';
       input.style.color = 'blue';
+
     }
     else {
       button.textContent = `${authorValue}'s content doesn't exist in List`;
