@@ -97,9 +97,9 @@ export class ContentListComponent implements OnInit {
 
   checkAuthor(authorValue: string) {
     console.log(authorValue);
-    let button = document.querySelector('button') as HTMLElement;
+    let button = document.querySelector('button') as HTMLButtonElement;
     let input = (<HTMLInputElement>document.querySelector('input'));
-
+    let card = document.querySelector('div.card') as HTMLDivElement;
     let findAuthor = this.ContentListItem.find(el =>
 
       el.author.toLowerCase() == authorValue.toLowerCase()
@@ -110,7 +110,6 @@ export class ContentListComponent implements OnInit {
       input.value = `${authorValue}'s content exist in List`;
       button.style.color = 'blue';
       input.style.color = 'blue';
-
     }
     else {
       button.textContent = `${authorValue}'s content doesn't exist in List`;
@@ -119,14 +118,19 @@ export class ContentListComponent implements OnInit {
       input.style.color = 'grey';
 
     }
+    button.disabled = true;
   }
 
   clearInput() {
     let input = (<HTMLInputElement>document.querySelector('input'));
-    let button = document.querySelector('button') as HTMLElement;
+    let button = document.querySelector('button') as HTMLButtonElement;
     button.textContent = 'Click me to find Author';
     button.style.color = 'grey';
     input.value = "";
+    button.disabled = false;
+
   }
+
+
 
 }

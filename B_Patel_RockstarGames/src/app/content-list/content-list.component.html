@@ -20,9 +20,8 @@
 <h2>Sports type Cards:</h2>
 
 <div class="card">
-  <app-content-card
-    *ngFor="let item of ContentListItem | typeFilter: 'Sports' ; index as i; even as isFirst; odd as isSecond"
-    [contentItem]="item" class="sportsCard" [class.even]="isFirst" [class.odd]="isSecond">
+  <app-content-card *ngFor="let item of ContentListItem | typeFilter: 'Sports' ; index as i" [contentItem]="item"
+    class="sportsCard">
   </app-content-card>
 </div>
 
