@@ -75,7 +75,7 @@ export class ContentListComponent implements OnInit {
       id: 6,
       title: "Bully (video game)",
       body: "Bully is an action-adventure game set in an open world environment and played from a third-person perspective. The game's single-player mode has the player control a high school student—teenage rebel, James Hopkins. Throughout the story, Jimmy rises through the ranks of the school groups, archetypes which include Bullies, Nerds, Preppies, Greasers, and Jocks. Players complete missions—linear scenarios with set objectives—to progress through the story.",
-      author: "Steven Olds",
+      author: "steven olds",
       imageLink: "https://upload.wikimedia.org/wikipedia/en/6/63/Bully_frontcover.jpg",
       type: "Sports",
       hashtags: ["Bull", "playstation", "action"]
@@ -99,19 +99,21 @@ export class ContentListComponent implements OnInit {
     console.log(authorValue);
     let button = document.querySelector('button') as HTMLButtonElement;
     let input = (<HTMLInputElement>document.querySelector('input'));
-    let card = document.querySelector('div.card') as HTMLDivElement;
     let findAuthor = this.ContentListItem.find(el =>
 
       el.author.toLowerCase() == authorValue.toLowerCase()
 
     );
 
+
     if (findAuthor) {
       console.log(findAuthor);
 
-      // var h2 = document.querySelector('h2.author') as HTMLElement;
-      // console.log(h2);
-      // h2.style.border = '10px solid red';
+
+      var xpath = `//h2[text()='Author: ${authorValue.toLowerCase()}']`;
+      var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue as HTMLHeadElement;
+      console.log(matchingElement);
+
 
 
 
