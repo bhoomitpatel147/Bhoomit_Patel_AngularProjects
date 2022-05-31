@@ -50,3 +50,29 @@
         height: 30px;
     }
 }
+
+
+
+.blinkingDiv {
+    animation-name: blinking;
+    animation-duration: 1s;
+    animation-iteration-count: 100;
+}
+
+@keyframes blinking {
+    10% {
+        border-color: red;
+    }
+
+    20% {
+        border-color: blue;
+    }
+
+    50% {
+        border-color: #ffcd5f;
+    }
+
+    75% {
+        border-color: yellow;
+    }
+}

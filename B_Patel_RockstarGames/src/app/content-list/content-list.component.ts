@@ -1,3 +1,4 @@
+import { TitleCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { find } from 'rxjs';
 import { Content } from '../models/content';
@@ -10,7 +11,6 @@ import { Content } from '../models/content';
 export class ContentListComponent implements OnInit {
 
   ContentListItem: Content[];
-  searchAuthor: boolean = false;
   // searchAuthorName: string;
 
   constructor() {
@@ -97,46 +97,59 @@ export class ContentListComponent implements OnInit {
 
   checkAuthor(authorValue: string) {
     console.log(authorValue);
+    // select the button and input tag
     let button = document.querySelector('button') as HTMLButtonElement;
     let input = (<HTMLInputElement>document.querySelector('input'));
+
+    // Filter the author name:
     let findAuthor = this.ContentListItem.find(el =>
 
       el.author.toLowerCase() == authorValue.toLowerCase()
 
     );
 
+    // for convert search input to title case:
+
+    let arr = authorValue.toLowerCase().split(" ");
+    for (var i = 0; i < arr.length; i++) {
+      arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    let finalAuthorValue = arr.join(" ");
+    var xpath = `//h2[text()='Author: ${finalAuthorValue}']`;
+    var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    console.log(matchingElement?.parentElement);
+    let div = matchingElement?.parentElement?.parentElement as HTMLDivElement;
+
+    // if author found then set the styles and borders
 
     if (findAuthor) {
-      console.log(findAuthor);
-
-
-      var xpath = `//h2[text()='Author: ${authorValue.toLowerCase()}']`;
-      var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue as HTMLHeadElement;
-      console.log(matchingElement);
-
-
-
-
-
+      console.log(finalAuthorValue);
+      div.style.border = "10px double red";
+      div.className = "blinkingDiv";
 
       button.textContent = `${authorValue}'s content exist in List`;
       input.value = `${authorValue}'s content exist in List`;
       button.style.color = 'blue';
       input.style.color = 'blue';
     }
-    else {
+    else { // if not found then set style and text to the button and input field
       button.textContent = `${authorValue}'s content doesn't exist in List`;
       input.value = `${authorValue}'s content doesn't exist in List`;
       button.style.color = 'grey';
       input.style.color = 'grey';
-
     }
     button.disabled = true;
   }
 
+
+  // For making for efficient code to display and search the author
   clearInput() {
+
+
+
     let input = (<HTMLInputElement>document.querySelector('input'));
     let button = document.querySelector('button') as HTMLButtonElement;
+
     button.textContent = 'Click me to find Author';
     button.style.color = 'grey';
     input.style.color = 'grey';

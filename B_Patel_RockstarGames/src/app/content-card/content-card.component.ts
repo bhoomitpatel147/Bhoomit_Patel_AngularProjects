@@ -8,15 +8,15 @@ import { Content } from '../models/content';
 export class ContentCardComponent implements OnInit {
 
   @Input() contentItem?: Content;
-//   private _items: Content[];
+  //   private _items: Content[];
   constructor() {
-//     this._items = []
+    //     this._items = []
   }
 
 
-//   get items(): Content[] {
-//     return this._items;
-//   }
+  //   get items(): Content[] {
+  //     return this._items;
+  //   }
 
   ngOnInit(): void {
   }
@@ -27,6 +27,8 @@ export class ContentCardComponent implements OnInit {
 
 
   }
+
+
 
 
 }
