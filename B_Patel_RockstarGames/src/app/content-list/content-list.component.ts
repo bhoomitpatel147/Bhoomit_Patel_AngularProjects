@@ -99,6 +99,8 @@ export class ContentListComponent implements OnInit {
     console.log(authorValue);
     // select the button and input tag
     let button = document.querySelector('button') as HTMLButtonElement;
+    let resultDisplay = document.querySelector('div.displayResult') as HTMLDivElement;
+
     let input = (<HTMLInputElement>document.querySelector('input'));
 
     // Filter the author name:
@@ -128,13 +130,21 @@ export class ContentListComponent implements OnInit {
       div.className = "blinkingDiv";
 
       button.textContent = `${authorValue}'s content exist in List`;
+      resultDisplay.textContent = `${authorValue}'s content exist in List`;
+
       input.value = `${authorValue}'s content exist in List`;
       button.style.color = 'blue';
       input.style.color = 'blue';
+      resultDisplay.style.display = "block";
+      resultDisplay.style.color = "blue";
     }
     else { // if not found then set style and text to the button and input field
       button.textContent = `${authorValue}'s content doesn't exist in List`;
       input.value = `${authorValue}'s content doesn't exist in List`;
+      resultDisplay.textContent = `${authorValue}'s content doesn't exist in List`;
+      resultDisplay.style.display = "block";
+      resultDisplay.style.color = "grey";
+
       button.style.color = 'grey';
       input.style.color = 'grey';
     }
@@ -149,6 +159,9 @@ export class ContentListComponent implements OnInit {
 
     let input = (<HTMLInputElement>document.querySelector('input'));
     let button = document.querySelector('button') as HTMLButtonElement;
+    let resultDisplay = document.querySelector('div.displayResult') as HTMLDivElement;
+
+    resultDisplay.style.display = "none";
 
     button.textContent = 'Click me to find Author';
     button.style.color = 'grey';
