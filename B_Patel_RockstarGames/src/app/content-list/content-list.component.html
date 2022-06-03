@@ -1,0 +1,69 @@
+<!-- <p>content-list works for Bhoomit Patel!</p> -->
+
+<!-- 
+<div>
+  <app-content-card *ngFor="let item of chessPlayers; index as i; first as isFirst" [contentItem]="item"
+    class="chess-player-{{i}}" [class.is-first]="isFirst">
+  </app-content-card>
+</div> -->
+
+<div class="search">
+  <input #authorValue placeholder="Please enter the author value" (click)="clearInput()" /><br />
+  <button (click)="checkAuthor(authorValue.value)">Click me to find Author</button>
+</div>
+<div class="displayResult">
+
+</div>
+
+
+
+
+<!-- Content only for Sports Type -->
+<h2>Sports type Cards:</h2>
+
+<div class="card">
+  <app-content-card *ngFor="let item of ContentListItem | typeFilter: 'Sports' ; index as i" [contentItem]="item"
+    class="sportsCard">
+  </app-content-card>
+</div>
+
+<!-- Content only for Racing Type -->
+<h2>Racing type Cards:</h2>
+
+<div class="card">
+  <app-content-card
+    *ngFor="let item of ContentListItem | typeFilter: 'Racing'; index as i; even as isFirst; odd as isSecond"
+    [contentItem]="item" class="racingCard" [class.even]="isFirst" [class.odd]="isSecond">
+  </app-content-card>
+</div>
+
+<!-- Content only for Racing Type -->
+<h2>Platformer type Cards:</h2>
+
+<div class="card">
+  <app-content-card
+    *ngFor="let item of ContentListItem | typeFilter: 'Platformer'; index as i; even as isFirst; odd as isSecond"
+    [contentItem]="item" class="platformerCard" [class.even]="isFirst" [class.odd]="isSecond">
+  </app-content-card>
+</div>
+
+
+<!-- Content only for Racing Type -->
+<h2>Third-Person Shooter type Cards:</h2>
+
+<div class="card">
+  <app-content-card
+    *ngFor="let item of ContentListItem | typeFilter: 'Third-person shooter'; index as i; even as isFirst; odd as isSecond"
+    [contentItem]="item" class="thirdShooterCard" [class.even]="isFirst" [class.odd]="isSecond">
+  </app-content-card>
+</div>
+
+<!-- Content only for No Type Set -->
+
+<h2>Not selected type Cards:</h2>
+
+<div class="card">
+  <app-content-card *ngFor="let item of ContentListItem | typeFilter; index as i; even as isFirst; odd as isSecond"
+    [contentItem]="item" class="unknownTypeCard" [class.even]="isFirst" [class.odd]="isSecond">
+  </app-content-card>
+</div>
