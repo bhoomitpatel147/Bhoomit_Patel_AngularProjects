@@ -9,8 +9,12 @@ export class TypeFilterPipe implements PipeTransform {
   transform(contetItem: Content[], optionalStr?: string): Content[] {
     return contetItem.filter
       (individualContent => {
-        return optionalStr == individualContent.type;
-      });
+        if (optionalStr) {
+          return optionalStr == individualContent.type;
+        }
+        return !individualContent.type;
+      }
+      );
   }
 
 }
