@@ -6,7 +6,7 @@
         <img class="not-found" (click)="clickedImage()"
             [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
     </ng-template>
-    <h1 *ngIf="contentItem && contentItem.title">{{contentItem.title}}</h1>
+    <h1 *ngIf="contentItem && contentItem.title" appHighlightImportantData>{{contentItem.title}}</h1>
 
     <p class="body" *ngIf="contentItem && contentItem.body;">
         {{contentItem.body}}</p>
@@ -14,10 +14,10 @@
     <h2 class='{{contentItem.author.toLowerCase()}}' *ngIf="contentItem && contentItem.author">Author:
         {{contentItem?.author | titlecase}}</h2>
 
-    <h2 class="type" *ngIf="contentItem && contentItem.type">Type: {{contentItem.type}}</h2>
+    <h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData>Type: {{contentItem.type}}</h2>
 
     <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
-        <span *ngFor="let hashtag of contentItem.hashtags">
+        <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData>
             #{{ hashtag }}
         </span>
         <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->
