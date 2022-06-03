@@ -6,7 +6,8 @@
         <img class="not-found" (click)="clickedImage()"
             [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
     </ng-template>
-    <h1 *ngIf="contentItem && contentItem.title" appHighlightImportantData>{{contentItem.title}}</h1>
+    <h1 *ngIf="contentItem && contentItem.title" appHighlightImportantData [color]="'green'">{{contentItem.title}}
+    </h1>
 
     <p class="body" *ngIf="contentItem && contentItem.body;">
         {{contentItem.body}}</p>

@@ -6,27 +6,33 @@ import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angula
 export class HighlightImportantDataDirective {
   @Input() color?: string;
   private isHighlighted: boolean = false;
-  private initialColour: string;
+  private initialTypeBorder: string;
+  private initialTitleBgColor: string;
   // private initialTextColor: string;
   @HostBinding('style.border')
-  get border() {
-    return this.isHighlighted ? '5px double red' : this.initialColour;
+  get borderForType() {
+    return this.isHighlighted ? '5px double red' : this.initialTypeBorder;
   }
-  // @HostBinding('style.border')
-  // get textColour() {
-  //   return this.isHighlighted ? this.checkLuminance(this.color || "green") :
-  //     this.checkLuminance(this.initialColour);
-  // }
+  @HostBinding('style.backgroundColor')
+  get backgroundColorForTitle() {
+    return this.isHighlighted ? this.color || "transparent" :
+      this.initialTitleBgColor;
+  }
   constructor(private el: ElementRef) {
-    this.initialColour = this.el.nativeElement.style.border;
-    // this.initialTextColor = this.el.nativeElement.style.color;
+    this.initialTypeBorder = this.el.nativeElement.style.border;
+    this.initialTitleBgColor = this.el.nativeElement.style.backgroundColor;
   }
 
-  @HostListener('mouseenter') onclick() {
+  @HostListener('mouseenter') onclickTitle() {
     this.isHighlighted = !this.isHighlighted;
   }
-  @HostListener('mouseout') onClick() {
+  @HostListener('mouseout') onClickTitle() {
     this.isHighlighted = !this.isHighlighted;
+    // console.log(this.color);
+  }
+  @HostListener('click') onClickType() {
+    this.isHighlighted = !this.isHighlighted;
+    // console.log(this.color);
   }
 
   // checkLuminance(color: string): string {
