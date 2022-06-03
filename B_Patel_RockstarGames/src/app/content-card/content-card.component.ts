@@ -21,9 +21,9 @@ export class ContentCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clickedImage(id: number, author: string) {
-    console.log(`The clicked Content's id: "${id}"`);
-    console.log(`The clicked Content's Author: "${author}"`);
+  clickedImage() {
+    console.log(`The clicked Content's id: "${this.contentItem?.id}"`);
+    console.log(`The clicked Content's Author: "${this.contentItem?.author}"`);
 
 
   }

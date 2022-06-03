@@ -20,7 +20,7 @@ export class ContentListComponent implements OnInit {
       title: "Grand Theft Auto: Mission Pack 1 - London 1969",
       body: "This is an expansion pack for the 1998 action-adventure game Grand Theft Auto, developed by Rockstar Canada and published by Rockstar Games.",
       author: "ray larabie",
-      imageLink: "https://upload.wikimedia.org/wikipedia/en/d/de/Grand_Theft_Auto_London_1969.jpg",
+      // imageLink: "https://upload.wikimedia.org/wikipedia/en/d/de/Grand_Theft_Auto_London_1969.jpg",
       hashtags: ["grandtheftautolondon1969", "GTA", "funRockstar"]
     },
 
@@ -49,7 +49,7 @@ export class ContentListComponent implements OnInit {
       title: "Thrasher Presents Skate and Destroy",
       body: "Thrasher Presents Skate and Destroy, also known as Thrasher: Skate and Destroy, is a skateboarding video game developed by Z-Axis and released in 1999 for the Sony PlayStation. The game was later published in Japan by UEP Systems on March 4, 2000 under the name Thrasher SK8.[2] A Game Boy Color version was also developed, but was later cancelled.",
       author: "z-axis",
-      imageLink: "https://upload.wikimedia.org/wikipedia/en/1/18/Thrasher_-_Skate_and_Destroy_Coverart.jpg",
+      // imageLink: "https://upload.wikimedia.org/wikipedia/en/1/18/Thrasher_-_Skate_and_Destroy_Coverart.jpg",
       type: "Sports",
       hashtags: ["thrasherpresentsskateanddestroy", "playstation", "realSport"]
     },
