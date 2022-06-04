@@ -23,11 +23,13 @@ h1 {
 }
 
 .hashtags {
-    color: blue;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
     border: 1px solid seagreen;
     display: flex;
     justify-content: space-evenly;
-    background-color: antiquewhite;
+    background-color: chocolate;
     padding: 5px;
     margin: 15px 5px;
     flex-direction: row;

@@ -4,7 +4,11 @@ import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angula
   selector: '[appHighlightImportantData]'
 })
 export class HighlightImportantDataDirective {
+  @Input() bgColor?: string;
+  @Input() border?: string;
   @Input() color?: string;
+
+
   private isHighLightBorder: boolean = false;
   private isHighLightBgColor: boolean = false;
   private isHightLightTextColor: boolean = false;
@@ -15,17 +19,17 @@ export class HighlightImportantDataDirective {
 
   @HostBinding('style.border')
   get borderForType() {
-    return this.isHighLightBorder ? '5px double red' : this.initialTypeBorder;
+    return this.isHighLightBorder ? this.border : this.initialTypeBorder;
   }
   @HostBinding('style.backgroundColor')
   get backgroundColorForTitle() {
-    return this.isHighLightBgColor ? this.color || "transparent" :
+    return this.isHighLightBgColor ? this.bgColor || "transparent" :
       this.initialTitleBgColor;
   }
 
   @HostBinding('style.color')
   get textColorForTags() {
-    return this.isHightLightTextColor ? 'red' : this.initialTextColor;
+    return this.isHightLightTextColor ? this.color : this.initialTextColor;
   }
 
 
