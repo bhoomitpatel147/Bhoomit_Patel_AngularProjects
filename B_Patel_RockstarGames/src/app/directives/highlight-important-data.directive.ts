@@ -46,7 +46,7 @@ export class HighlightImportantDataDirective {
 
   }
 
-  @HostListener('mouseout') onClickTitle() {
+  @HostListener('mouseleave') onClickTitle() {
     this.isHighLightBorder = !this.isHighLightBorder;
     this.isHightLightTextColor = !this.isHightLightTextColor;
 
