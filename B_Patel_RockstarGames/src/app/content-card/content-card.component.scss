@@ -56,28 +56,28 @@ h1 {
     -ms-user-select: none;
 }
 
-// @keyframes blink {
-//     0% {
-//         color: red;
-//     }
+@keyframes blink {
+    0% {
+        color: red;
+    }
 
-//     20% {
-//         color: green;
-//     }
+    20% {
+        color: green;
+    }
 
-//     40% {
-//         color: yellow;
-//     }
+    40% {
+        color: yellow;
+    }
 
-//     60% {
-//         color: blue;
-//     }
+    60% {
+        color: blue;
+    }
 
-//     80% {
-//         color: orange;
-//     }
+    80% {
+        color: orange;
+    }
 
-//     100% {
-//         color: white;
-//     }
-// }
+    100% {
+        color: white;
+    }
+}

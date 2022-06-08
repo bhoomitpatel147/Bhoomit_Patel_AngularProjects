@@ -14,19 +14,27 @@ export class ContentCardComponent implements OnInit {
   }
 
 
+
   //   get items(): Content[] {
   //     return this._items;
   //   }
 
+
   ngOnInit(): void {
   }
+
 
   clickedImage() {
     console.log(`The clicked Content's id: "${this.contentItem?.id}"`);
     console.log(`The clicked Content's Author: "${this.contentItem?.author}"`);
-
-
   }
+
+  check() {
+    let lastDiv = document.querySelector('div.card') as HTMLDivElement;
+    console.log(lastDiv);
+  }
+
+
 
 
 

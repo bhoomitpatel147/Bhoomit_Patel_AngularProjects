@@ -21,29 +21,25 @@
 <!-- Content only for Sports Type -->
 <h2>Sports type Cards:</h2>
 
-<div class="card">
-  <app-content-card *ngFor="let item of ContentListItem | typeFilter: 'Sports' ; index as i" [contentItem]="item"
-    class="sportsCard">
+<div class="card" *ngFor="let item of ContentListItem | typeFilter: 'Sports' ; index as i last as isLast;">
+  <app-content-card [contentItem]="item" class="sportsCard" [class.last]="isLast">
   </app-content-card>
 </div>
 
 <!-- Content only for Racing Type -->
 <h2>Racing type Cards:</h2>
 
-<div class="card">
-  <app-content-card
-    *ngFor="let item of ContentListItem | typeFilter: 'Racing'; index as i; even as isFirst; odd as isSecond"
-    [contentItem]="item" class="racingCard" [class.even]="isFirst" [class.odd]="isSecond">
+<div class="card" *ngFor="let item of ContentListItem | typeFilter: 'Racing'; index as i; last as isLast; ">
+  <app-content-card [contentItem]="item" class="racingCard" [class.last]="isLast"
+    ng-class="{style: expressionData1, class2: expressionData2}">
   </app-content-card>
 </div>
 
 <!-- Content only for Racing Type -->
 <h2>Platformer type Cards:</h2>
 
-<div class="card">
-  <app-content-card
-    *ngFor="let item of ContentListItem | typeFilter: 'Platformer'; index as i; even as isFirst; odd as isSecond"
-    [contentItem]="item" class="platformerCard" [class.even]="isFirst" [class.odd]="isSecond">
+<div class="card" *ngFor="let item of ContentListItem | typeFilter: 'Platformer'; index as i; last as isLast;">
+  <app-content-card [contentItem]="item" class="platformerCard" [class.last]="isLast">
   </app-content-card>
 </div>
 
@@ -51,10 +47,9 @@
 <!-- Content only for Racing Type -->
 <h2>Third-Person Shooter type Cards:</h2>
 
-<div class="card">
-  <app-content-card
-    *ngFor="let item of ContentListItem | typeFilter: 'Third-person shooter'; index as i; even as isFirst; odd as isSecond"
-    [contentItem]="item" class="thirdShooterCard" [class.even]="isFirst" [class.odd]="isSecond">
+<div class="card"
+  *ngFor="let item of ContentListItem | typeFilter: 'Third-person shooter'; index as i; last as isLast;">
+  <app-content-card [contentItem]="item" class="thirdShooterCard" [class.last]="isLast">
   </app-content-card>
 </div>
 
@@ -62,8 +57,7 @@
 
 <h2>Not selected type Cards:</h2>
 
-<div class="card">
-  <app-content-card *ngFor="let item of ContentListItem | typeFilter; index as i; even as isFirst; odd as isSecond"
-    [contentItem]="item" class="unknownTypeCard" [class.even]="isFirst" [class.odd]="isSecond">
+<div class="card" *ngFor="let item of ContentListItem | typeFilter; index as i; last as isLast;">
+  <app-content-card [contentItem]="item" class="unknownTypeCard" [class.last]="isLast">
   </app-content-card>
 </div>

@@ -120,14 +120,14 @@ export class ContentListComponent implements OnInit {
     var xpath = `//h2[text()='Author: ${finalAuthorValue}']`;
     var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     console.log(matchingElement?.parentElement);
-    let div = matchingElement?.parentElement?.parentElement as HTMLDivElement;
+    let div = matchingElement?.parentElement as HTMLDivElement;
 
     // if author found then set the styles and borders
 
     if (findAuthor) {
       console.log(finalAuthorValue);
       div.style.border = "10px double red";
-      div.className = "blinkingDiv";
+      // div.className = "blinkingDiv";
 
       button.textContent = `${authorValue}'s content exist in List`;
       resultDisplay.textContent = `${authorValue}'s content exist in List`;
@@ -171,6 +171,7 @@ export class ContentListComponent implements OnInit {
     button.disabled = false;
 
   }
+
 
 
 
