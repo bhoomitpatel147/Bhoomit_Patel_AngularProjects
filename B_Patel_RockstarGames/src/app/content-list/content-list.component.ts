@@ -56,6 +56,12 @@ export class ContentListComponent implements OnInit {
     // });
 
 
+    this.contentService.deleteContentItem(1).subscribe((contentArrayFromService: Content[]) => {
+      this.ContentListItem = [...contentArrayFromService];
+      console.log(this.ContentListItem);
+    });
+
+
 
 
   }

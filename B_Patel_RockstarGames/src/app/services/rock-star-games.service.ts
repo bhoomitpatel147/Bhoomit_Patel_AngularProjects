@@ -30,7 +30,7 @@ export class RockStarGamesService {
     }));
   }
 
-  // U
+  // Update method
   updateContentItem(newContent: Content): Observable<Content[]> {
     const newArray: Array<Content> = CONTENTLISTITEM;
     const arrayofids: Array<number> = newArray.map(item => item.id);
@@ -59,15 +59,26 @@ export class RockStarGamesService {
     //   }
     // });
     return of(newArray)
-    console.log(newArray);
+    // console.log(newArray);
   }
 
   // D
-  // deleteContentItem(newContent: Content): Observable<undefined> {
-  //   // display that it's processing
-  //   // delete the item
-  //   return of(); // send back observable so the component can subscribe to it and know it worked
-  // }
+  deleteContentItem(id: number): Observable<Content[]> {
+    // display that it's processing
+    // delete the item
+    const newArray: Array<Content> = CONTENTLISTITEM;
+
+    const arrayofids: Array<number> = newArray.map(item => item.id);
+
+    arrayofids.forEach(item => {
+      if (item === id) {
+        newArray.splice(item, 1)
+      }
+    });
+    return of(newArray);
+    // console.log(newArray);
+
+  }
 }
 
 
