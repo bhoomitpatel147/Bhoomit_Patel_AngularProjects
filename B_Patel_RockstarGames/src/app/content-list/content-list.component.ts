@@ -24,6 +24,32 @@ export class ContentListComponent implements OnInit {
     this.contentService.getContent().subscribe((contentArrayFromService: Content[]) => {
       this.ContentListItem = contentArrayFromService;
     });
+
+    // A method that accepts a number and returns the content item in the array that contains the same id as the number parameter (NOT the item in the array at that index)
+    // You can set whatever value for the id 
+
+    this.contentService.getContentItem(1).subscribe(contentList => {
+      console.log(contentList);
+    })
+
+    // A method that accepts a Content item as an input, adds the item to the array, and returns the array after the item is added
+
+    this.contentService.addContentItem(this.newContent).subscribe(contetList => {
+      console.log(contetList);
+    });
+
+
+
+
+  }
+  // for add Content
+  newContent: Content = {
+    id: 11,
+    author: 'Bhoomit',
+    imageLink: '',
+    title: 'Hacker',
+    type: 'none'
+
   }
 
   checkAuthor(authorValue: string) {
