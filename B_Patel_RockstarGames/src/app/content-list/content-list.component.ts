@@ -38,9 +38,12 @@ export class ContentListComponent implements OnInit {
     //   console.log(contetList);
     // });
 
-    this.contentService.updateContentItem(this.newContent).subscribe(contetList => {
+    this.contentService.updateContentItem(this.newContent).subscribe((contentArrayFromService: Content[]) => {
       // contetList = [...contetList];
-      console.log(contetList);
+      // console.log(contetList);
+      this.ContentListItem = [...this.ContentListItem];
+      this.ContentListItem = contentArrayFromService;
+      console.log(this.ContentListItem);
     });
 
 
