@@ -32,20 +32,34 @@ export class RockStarGamesService {
 
   // U
   updateContentItem(newContent: Content): Observable<Content[]> {
-    return of(CONTENTLISTITEM.filter(individualID => {
-      if (individualID.id == newContent.id) {
-        const index = CONTENTLISTITEM.findIndex((el) => el.id === newContent.id);
-        CONTENTLISTITEM.splice(index, 1, newContent);
-        console.log(CONTENTLISTITEM[index]);
-        const newArray: Array<Content> = CONTENTLISTITEM;
-        console.log(newArray);
+    const newArray: Array<Content> = CONTENTLISTITEM;
+    const arrayofids: Array<number> = newArray.map(item => item.id);
 
-        return of(newArray);
+    arrayofids.forEach(id => {
+      if (id == newContent.id) {
+        newArray.splice(id, 1, newContent);
+        // return newArray;
       }
-      else {
-        return of(CONTENTLISTITEM);
-      }
-    }));
+    });
+
+    // newArray.forEach(item => {
+    //   if (item.id == newContent.id) {
+    //     const index = CONTENTLISTITEM.findIndex((el) => el.id === newContent.id);
+    //     CONTENTLISTITEM.splice(index, 1, newContent);
+    //     console.log(CONTENTLISTITEM[index]);
+    //     const newArray: Array<Content> = CONTENTLISTITEM;
+    //     console.log(newArray);
+    //     // return of(newArray)
+
+    //   }
+    //   else {
+    //     // return of(newArray)
+    //     newArray;
+
+    //   }
+    // });
+    return of(newArray)
+    console.log(newArray);
   }
 
   // D

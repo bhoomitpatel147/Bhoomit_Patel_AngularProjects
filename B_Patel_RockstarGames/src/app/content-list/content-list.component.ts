@@ -14,6 +14,16 @@ export class ContentListComponent implements OnInit {
 
   ContentListItem: Content[];
   // searchAuthorName: string;
+  // for add Content
+  newContent: Content = {
+    id: 4,
+    author: 'Bhoomit',
+    imageLink: '',
+    title: 'Hacker',
+    type: 'Sports'
+
+  }
+
 
   constructor(private contentService: RockStarGamesService) {
 
@@ -41,22 +51,13 @@ export class ContentListComponent implements OnInit {
     this.contentService.updateContentItem(this.newContent).subscribe((contentArrayFromService: Content[]) => {
       // contetList = [...contetList];
       // console.log(contetList);
-      this.ContentListItem = [...this.ContentListItem];
-      this.ContentListItem = contentArrayFromService;
+      // this.ContentListItem = [...this.ContentListItem];
+      this.ContentListItem = [...contentArrayFromService];
       console.log(this.ContentListItem);
     });
 
 
 
-
-  }
-  // for add Content
-  newContent: Content = {
-    id: 4,
-    author: 'Bhoomit',
-    imageLink: '',
-    title: 'Hacker',
-    type: 'none'
 
   }
 
