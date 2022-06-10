@@ -4,23 +4,24 @@
     <img class="not-found" (click)="clickedImage()"
         [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
 </ng-template>
-<h1 class="title" *ngIf="contentItem && contentItem.title" appHighlightImportantData [bgColor]="'purple'">
+<h1 class="title" *ngIf="contentItem && contentItem.title" appHighlightImportantData [color]="'purple'"
+    highLightCss='title'>
     {{contentItem.title}}
 </h1>
 
 <p class="body" *ngIf="contentItem && contentItem.body;">
     {{contentItem.body}}</p>
 
-<h2 class='author' *ngIf="contentItem && contentItem.author" (mouseover)="check()">Author:
+<h2 class='author' *ngIf="contentItem && contentItem.author" appHighlightImportantData highLightCss='author'>Author:
     {{contentItem?.author | titlecase}}</h2>
 
 
 
-<h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData [border]="'5px double red'">Type:
+<h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData highLightCss='type'>Type:
     {{contentItem.type}}</h2>
 
 <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
-    <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData [color]="'white'">
+    <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
         #{{ hashtag }}
     </span>
     <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->

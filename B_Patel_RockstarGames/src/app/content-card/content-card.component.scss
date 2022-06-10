@@ -47,6 +47,10 @@ h1 {
     // animation: blink 5s infinite;
 }
 
+.type.borderType {
+    border: 5px double red;
+}
+
 .type,
 .title,
 .hashtags {
@@ -54,6 +58,10 @@ h1 {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+
+    span.fontColor {
+        color: springgreen;
+    }
 }
 
 @keyframes blink {
@@ -80,4 +88,18 @@ h1 {
     100% {
         color: white;
     }
+}
+
+
+
+:host.is-last .author.fontColor {
+    color: springgreen;
+}
+
+:host.is-last .author.borderType {
+    border: 5px solid red;
+}
+
+:host.is-last .author.backgroundColor {
+    background-color: purple;
 }

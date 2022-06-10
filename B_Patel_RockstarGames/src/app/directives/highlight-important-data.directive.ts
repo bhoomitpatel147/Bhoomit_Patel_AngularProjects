@@ -4,64 +4,73 @@ import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angula
   selector: '[appHighlightImportantData]'
 })
 export class HighlightImportantDataDirective {
-  @Input() bgColor?: string;
-  @Input() border?: string;
   @Input() color?: string;
+  @Input() highLightCss?: "type" | "title" | "tag" | "author";
+  // @Input() color?: string;
 
 
   private isHighLightBorder: boolean = false;
   private isHighLightBgColor: boolean = false;
   private isHightLightTextColor: boolean = false;
 
-  private initialTypeBorder: string;
-  private initialTitleBgColor: string;
+  // private initialTypeBorder: string;
+  // private initialTitleBgColor: string;
   private initialTextColor: string;
 
-  @HostBinding('style.border')
-  get borderForType() {
-    return this.isHighLightBorder ? this.border : this.initialTypeBorder;
-  }
+
   @HostBinding('style.backgroundColor')
   get backgroundColorForTitle() {
-    return this.isHighLightBgColor ? this.bgColor || "transparent" :
-      this.initialTitleBgColor;
+    return this.isHighLightBgColor ? this.color : "transparent";
   }
 
-  @HostBinding('style.color')
+  @HostBinding('class.borderType')
+  get borderForType() {
+    return this.isHighLightBorder;
+  }
+  @HostBinding('class.fontColor')
   get textColorForTags() {
-    return this.isHightLightTextColor ? this.color : this.initialTextColor;
+    return this.isHightLightTextColor;
+  }
+
+  @HostBinding('class.backgroundColor')
+  get bgColor() {
+    return this.isHighLightBgColor;
   }
 
 
 
   constructor(private el: ElementRef) {
-    this.initialTypeBorder = this.el.nativeElement.style.border;
-    this.initialTitleBgColor = this.el.nativeElement.style.backgroundColor;
+
     this.initialTextColor = this.el.nativeElement.style.color;
   }
 
   @HostListener('mouseenter') onclickTitle() {
-    this.isHighLightBorder = !this.isHighLightBorder;
-    this.isHightLightTextColor = !this.isHightLightTextColor;
-
+    this.hoverAffect(true);
   }
 
   @HostListener('mouseleave') onClickTitle() {
-    this.isHighLightBorder = !this.isHighLightBorder;
-    this.isHightLightTextColor = !this.isHightLightTextColor;
+    this.hoverAffect(false);
 
     // console.log(this.color);
   }
-  // @HostListener('mouseenter') onOverTag() {
-  //   this.isHightLightTextColor = !this.isHightLightTextColor;
-  // }
-  // @HostListener('mouseout') onOutTag() {
-  //   this.isHightLightTextColor = !this.isHightLightTextColor;
 
-  //   // console.log(this.color);
-  // }
+  private hoverAffect(newState: boolean) {
+    if (this.highLightCss === "type" || this.highLightCss === "author") {
+      // reset type background color
+      this.isHighLightBorder = newState;
+      // this.elm.nativeElement.style.border = newState ? "4px solid #0000ff" : "none";
+    }
+
+    if (this.highLightCss === "tag" || this.highLightCss === "author") {
+      // reset tag font color back to original value
+      this.isHightLightTextColor = newState;
+      // this.elm.nativeElement.style.color = newState ? 'darkred' : this.initialColourOfTagText;
+    }
+  }
   @HostListener('click') onClickType() {
-    this.isHighLightBgColor = !this.isHighLightBgColor;
+    if (this.highLightCss === 'title' || this.highLightCss === 'author') {
+      this.isHighLightBgColor = !this.isHighLightBgColor;
+    }
     // console.log(this.color);
   }
 
