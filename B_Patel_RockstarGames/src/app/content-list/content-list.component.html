@@ -21,7 +21,7 @@
 <!-- Content only for Sports Type -->
 <h2>Sports type Cards:</h2>
 
-<div class="card" *ngFor="let item of ContentListItem | typeFilter: 'Sports' ; index as i last as isLast;">
+<div class="card" *ngFor="let item of ContentListItem | typeFilter: 'Sports' ; index as i; last as isLast;">
   <app-content-card [contentItem]="item" class="sportsCard" [class.is-last]="isLast">
   </app-content-card>
 </div>
