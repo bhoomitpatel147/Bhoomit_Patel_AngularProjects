@@ -16,7 +16,7 @@ export class ContentListComponent implements OnInit {
   // searchAuthorName: string;
   // for add Content
   newContent: Content = {
-    id: 12,
+    id: 1,
     author: 'Bhoomit',
     imageLink: '',
     title: 'Updated Item Hacker',
