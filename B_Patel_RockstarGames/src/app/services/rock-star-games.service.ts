@@ -18,10 +18,22 @@ export class RockStarGamesService {
 
   // C
   addContentItem(newContent: Content): Observable<Content[]> {
-    CONTENTLISTITEM.push(newContent)
+    const newArray: Array<Content> = CONTENTLISTITEM;
+    const arrayofids: Array<number> = newArray.map(item => item.id);
+    if (arrayofids.indexOf(newContent.id) !== -1) {
+      alert(`Sorry you can not add the data for this ${newContent.id} because it is already have data for this id!!!`)
+    }
+    else {
+      CONTENTLISTITEM.push(newContent);
+      alert(`New Content added successfully!!`)
+
+    }
     // return of([...CONTENTLISTITEM]);
     return of(CONTENTLISTITEM);
+
   }
+
+
 
   // R
   getContentItem(id: number): Observable<Content[]> {

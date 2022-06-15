@@ -33,5 +33,10 @@ export class AppComponent implements OnInit {
     console.log(this.newContent);
   }
 
+  checkID(id: string) {
+    this.contentService.getContentItem(Number(id)).subscribe(content => {
+      this.newContent = content.slice(0);
+    });
+  }
 
 }
