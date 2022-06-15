@@ -1,6 +1,6 @@
 <h1>New Content Card:</h1>
 <div *ngFor="let item of newContent; index as i; last as isLast;">
-    <app-content-card [contentItem]="item">
+    <app-content-card [contentItem]="item" class="newSample">
         <img *ngIf="contentItem?.author; else elseImageLinkBlock" [src]="contentItem?.imageLink" />
         <ng-template #elseImageLinkBlock>
             <img class="not-found"

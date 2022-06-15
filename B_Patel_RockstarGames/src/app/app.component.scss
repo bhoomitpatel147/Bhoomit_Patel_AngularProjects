@@ -1,19 +1,17 @@
-// :host {
-//     app-content-list {
+:host {
 
 
-//         // :host app-content-card {
-//         //     :host {
-//         display: block;
-//         color: red;
-//         width: 780px;
-//         border: 2px solid blueviolet;
-//         margin: 10px auto;
-//         padding: 10px;
-//     }
-// }
 
+    .newSample {
+        display: block;
+        width: 780px;
+        margin: 50px auto;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        padding: 10px;
+        border-radius: 30px;
+    }
 
+}
 
 // //     }
 // // }
