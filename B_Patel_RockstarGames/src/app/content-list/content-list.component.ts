@@ -70,7 +70,7 @@ export class ContentListComponent implements OnInit {
   checkAuthor(authorValue: string) {
     console.log(authorValue);
     // select the button and input tag
-    let button = document.querySelector('button.author') as HTMLButtonElement;
+    let button = document.querySelector('button') as HTMLButtonElement;
     let resultDisplay = document.querySelector('div.displayResult') as HTMLDivElement;
 
     let input = (<HTMLInputElement>document.querySelector('input'));
