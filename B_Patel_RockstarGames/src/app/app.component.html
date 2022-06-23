@@ -1,0 +1,39 @@
+<div class="search">
+    <input #authorValue type="number" placeholder="Please enter ID for Content" /><br />
+    <button (click)="checkID(authorValue.value)">Click me to find Content</button>
+</div>
+
+<h1>New Content Card:</h1>
+<div *ngFor="let item of newContent; index as i; last as isLast;">
+    <app-content-card [contentItem]="item" class="newSample">
+        <img *ngIf="contentItem?.author; else elseImageLinkBlock" [src]="contentItem?.imageLink" />
+        <ng-template #elseImageLinkBlock>
+            <img class="not-found"
+                [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
+        </ng-template>
+        <h1 class="title" *ngIf="contentItem" appHighlightImportantData [color]="'purple'" highLightCss='title'>
+            {{item?.author}}
+        </h1>
+
+        <p class="body" *ngIf="contentItem && contentItem.body;">
+            {{contentItem.body}}</p>
+
+        <h2 class='author' *ngIf="contentItem && contentItem.author" appHighlightImportantData highLightCss='author'>
+            Author:
+            {{contentItem?.author | titlecase}}</h2>
+
+
+
+        <h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData highLightCss='type'>Type:
+            {{contentItem.type}}</h2>
+
+        <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
+            <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
+                #{{ hashtag }}
+            </span>
+        </div>
+    </app-content-card>
+
+</div>
+
+<app-content-list></app-content-list>
