@@ -1,37 +1,40 @@
-<img (click)="clickedImage()" *ngIf="contentItem && contentItem.imageLink; else elseImageLinkBlock"
-    [src]="contentItem.imageLink" />
-<ng-template #elseImageLinkBlock>
-    <img class="not-found" (click)="clickedImage()"
-        [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
-</ng-template>
-<h1 class="title" *ngIf="contentItem && contentItem.title" appHighlightImportantData [color]="'purple'"
-    highLightCss='title'>
-    {{contentItem.title}}
-</h1>
+<ng-container *ngIf="contentItem">
 
-<p class="body" *ngIf="contentItem && contentItem.body;">
-    {{contentItem.body}}</p>
-
-<h2 class='author' *ngIf="contentItem && contentItem.author" appHighlightImportantData highLightCss='author'>Author:
-    {{contentItem?.author | titlecase}}</h2>
+    <img (click)="clickedImage()" *ngIf="contentItem && contentItem.imageLink; else elseImageLinkBlock"
+        [src]="contentItem.imageLink" />
+    <ng-template #elseImageLinkBlock>
+        <img class="not-found" (click)="clickedImage()"
+            [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
+    </ng-template>
+    <h1 class="title" *ngIf="contentItem && contentItem.title" appHighlightImportantData [color]="'purple'"
+        highLightCss='title'>
+        {{contentItem.title}}
+    </h1>
 
 
+    <a class="content-detail-button" [routerLink]="['/details', contentItem.id]" routerLinkActive="active">
+        Content Details
+    </a>
 
-<h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData highLightCss='type'>Type:
-    {{contentItem.type}}</h2>
 
-<div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
-    <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
-        #{{ hashtag }}
-    </span>
-    <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->
-</div>
-<!-- <p class="hashtags" *ngIf="contentItem && contentItem.hashtags">{{contentItem.hashtags.join(' ')}}</p> -->
 
-<!-- <ng-template #elseBlockNameIsWhateverYouWant>
+    <h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData highLightCss='type'>Type:
+        {{contentItem.type}}</h2>
+
+    <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
+        <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
+            #{{ hashtag }}
+        </span>
+        <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->
+    </div>
+    <!-- <p class="hashtags" *ngIf="contentItem && contentItem.hashtags">{{contentItem.hashtags.join(' ')}}</p> -->
+
+    <!-- <ng-template #elseBlockNameIsWhateverYouWant>
         <p class="not-found">No body content found</p>
     </ng-template> -->
-<!-- <div class="type">{{contentItem?.type}}</div> -->
-<!-- <h2 *ngIf="this.contentItem2">
+    <!-- <div class="type">{{contentItem?.type}}</div> -->
+    <!-- <h2 *ngIf="this.contentItem2">
   {{ contentItem2.name }}
 </h2> -->
+
+</ng-container>
