@@ -6,6 +6,10 @@
     padding: 10px;
     border-radius: 30px;
 
+    &.found {
+        border-width: 10px;
+        border-color: red;
+    }
 
 
 }

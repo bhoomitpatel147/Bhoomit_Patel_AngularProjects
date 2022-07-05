@@ -28,7 +28,7 @@
 
 </ng-container>
 
-<a href="/list" class="btn">Go to Home Page</a>
+<a href="/list" class="btn">Go back to Content List</a>
 <ng-container *ngIf="contentItem">
     <a class="previousContent" *ngIf="contentItem.id > 0" [routerLink]="['/details', previousId]">Previous Content</a>
 </ng-container>
