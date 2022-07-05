@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.utility-page-content {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fef1e5;
+    width: auto;
+    padding: 20px 0;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Bree Serif', serif;
+    font-size: 2.78em;
+    line-height: 1.4;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 21px;
+}
+
+.button {
+    position: relative;
+    min-height: 3.1em;
+    min-width: 12em;
+    padding: 0.5em 2em 0.5em;
+    border: 3px none #000;
+    border-radius: 30px;
+    background-color: #f7345e;
+    -webkit-transition: .4s;
+    transition: .4s;
+    font-family: 'Bree Serif', serif;
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #1c0950;
+}
+
+.button-container {
+    margin-top: 3em;
+}
