@@ -7,7 +7,6 @@ import { InvalidLinkComponent } from './invalid-link/invalid-link.component';
 import { SearchComponent } from './search/search.component';
 
 
-
 const routes: Routes = [
   {
     path: "",
@@ -27,9 +26,14 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
+    path: 'contentNotFound',
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+  },
+  {
     path: "**",
-    component: InvalidLinkComponent
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   }
+
 ];
 
 @NgModule({

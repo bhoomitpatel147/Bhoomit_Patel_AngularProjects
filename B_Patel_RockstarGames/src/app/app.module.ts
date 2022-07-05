@@ -11,7 +11,6 @@ import { InvalidLinkComponent } from './invalid-link/invalid-link.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ContentDetailsComponent,
     InvalidLinkComponent,
     SearchComponent,
-    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,10 @@
     </ng-template>
     <h1 class="title" *ngIf="contentItem && contentItem.title" appHighlightImportantData [color]="'purple'"
         highLightCss='title'>
-        {{contentItem.title}}
+        <a class="details-button" [routerLink]="['/details', contentItem.id]" routerLinkActive="active">
+            {{contentItem.title}}
+        </a>
+
     </h1>
 
 
@@ -24,9 +27,7 @@
         </span>
         <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->
     </div>
-    <a class="details-button" [routerLink]="['/details', contentItem.id]" routerLinkActive="active">
-        More Details
-    </a>
+
 
     <!-- <p class="hashtags" *ngIf="contentItem && contentItem.hashtags">{{contentItem.hashtags.join(' ')}}</p> -->
 

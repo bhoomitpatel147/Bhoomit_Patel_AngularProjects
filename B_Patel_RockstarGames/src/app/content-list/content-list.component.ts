@@ -1,7 +1,5 @@
-import { TitleCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { find } from 'rxjs';
-import { CONTENTLISTITEM } from '../data/mock-rockStarGames';
 import { Content } from '../models/content';
 import { RockStarGamesService } from '../services/rock-star-games.service';
 
