@@ -110,18 +110,38 @@ a.btn {
     font-size: larger;
     display: flex;
     color: black;
-    background-color: rgb(217, 255, 0);
+    background-color: orange;
     width: fit-content;
     width: fit-content;
     margin: 0 auto;
     padding: 10px;
     font-weight: bolder;
     text-decoration: none;
+    border-radius: 20px;
     border: 1px double black;
 }
 
 a.btn:hover {
-    background-color: transparent;
-    color: green;
-    border-radius: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+
+.previousContent {
+    padding: 10px;
+    display: block;
+    background-color: blue;
+    color: white;
+    margin: 10px auto;
+    float: right;
+    text-align: center;
+    width: fit-content;
+    text-decoration: none;
+    border: 5px double honeydew;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.previousContent:hover {
+    background-color: red;
 }
