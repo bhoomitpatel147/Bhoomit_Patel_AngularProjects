@@ -62,10 +62,10 @@ export class RockStarGamesService {
     else {
       alert(`We do not have any data for this ID: ${id}`);
       return of([{
-        id: -1, author: '',
-        imageLink: '',
-        title: '',
-        type: ''
+        id: -1, author: 'No Author',
+        imageLink: 'https://pbs.twimg.com/media/DDPKLHNVwAA87D5.jpg',
+        title: 'No Title',
+        type: 'To type'
       }]);
     }
   }
