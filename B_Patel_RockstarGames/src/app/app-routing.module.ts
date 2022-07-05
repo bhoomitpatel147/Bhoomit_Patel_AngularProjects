@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentDetailsComponent } from './content-details/content-details.component';
 import { InvalidLinkComponent } from './invalid-link/invalid-link.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: "details/:id",
     component: ContentDetailsComponent
+  },
+  {
+    path: "search",
+    component: SearchComponent
   },
   {
     path: "**",
