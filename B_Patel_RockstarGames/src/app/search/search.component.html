@@ -4,10 +4,20 @@
 </div>
 
 
-<h1>Searched Content Card:</h1>
+<ng-container *ngIf="contentItem?.id !== -1 else elseBlock">
 
-<app-content-card [contentItem]="contentItem" class="single-item-on-app-component"></app-content-card>
+    <h1>Searched Content Card:</h1>
+    <app-content-card [contentItem]="contentItem" class="single-item-on-app-component"></app-content-card>
+</ng-container>
+<ng-template #elseBlock>
+    <div>
+        <h2 class="error">Content not found</h2>
 
+        <img class="errorImg"
+            src="https://media2.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif?cid=ecf05e474qhz49vqk3p1ygmhuxyo4qn9h2sa8dhqwyijhwne&rid=giphy.gif&ct=g">
+    </div>
+
+</ng-template>
 <!-- <div *ngFor="let item of newContent; index as i; last as isLast;">
     <app-content-card [contentItem]="item" class="newSample">
         <img *ngIf="contentItem?.author; else elseImageLinkBlock" [src]="contentItem?.imageLink" />

@@ -28,3 +28,19 @@ h1 {
     border-radius: 5px;
     font-size: 2em;
 }
+
+.error {
+    color: #ba3939;
+    background: #ffe0e0;
+    border: 1px solid #a33a3a;
+    text-align: center;
+    width: fit-content;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.errorImg {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}

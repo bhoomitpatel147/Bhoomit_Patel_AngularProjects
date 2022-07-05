@@ -19,12 +19,14 @@ export class SearchComponent implements OnInit {
     this.contentService.getContentItem(0).subscribe(content => {
       this.contentItem = content;
     });
+
     console.log(this.contentItem);
   }
   checkID(id: string) {
     this.contentService.getContentItem(Number(id)).subscribe(content => {
       this.contentItem = content;
     });
+
   }
 
 

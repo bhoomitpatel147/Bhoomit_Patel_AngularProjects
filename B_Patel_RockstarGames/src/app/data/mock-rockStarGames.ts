@@ -2,10 +2,10 @@ import { Content } from "../models/content";
 
 export const DEFAULTCONTENT: Content = {
     id: -1,
-    author: 'No author',
-    imageLink: '',
-    title: 'No title',
-    type: 'Sports'
+    author: 'No Author',
+    imageLink: 'https://pbs.twimg.com/media/DDPKLHNVwAA87D5.jpg',
+    title: 'No Title',
+    type: 'To type'
 }
 
 export const CONTENTLISTITEM: Content[] = [{
