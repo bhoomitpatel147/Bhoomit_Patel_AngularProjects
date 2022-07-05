@@ -38,7 +38,7 @@ export class ContentListComponent implements OnInit {
     // A method that accepts a number and returns the content item in the array that contains the same id as the number parameter (NOT the item in the array at that index)
     // You can set whatever value for the id 
 
-    this.contentService.getContentItem(12).subscribe(contentList => {
+    this.contentService.getContentItem(1).subscribe(contentList => {
       console.log(contentList);
     });
 
@@ -50,17 +50,17 @@ export class ContentListComponent implements OnInit {
 
     //A method that accepts a Content item as an input, updates an existing item in the array that has the same id as the input parameter, and returns the array after the item is updated
 
-    this.contentService.updateContentItem(this.newContent).subscribe((contentArrayFromService: Content[]) => {
-      this.ContentListItem = [...contentArrayFromService];
-      console.log(this.ContentListItem);
-    });
+    //     this.contentService.updateContentItem(this.newContent).subscribe((contentArrayFromService: Content[]) => {
+    //       this.ContentListItem = [...contentArrayFromService];
+    //       console.log(this.ContentListItem);
+    //     });
 
     // A method that accepts a number, removes the item from the array that has the same id as the number parameter, and returns the Content item that was removed
 
-    this.contentService.deleteContentItem(12).subscribe((contentArrayFromService: Content[]) => {
-      this.ContentListItem = [...contentArrayFromService];
-      console.log(this.ContentListItem);
-    });
+    //     this.contentService.deleteContentItem(12).subscribe((contentArrayFromService: Content[]) => {
+    //       this.ContentListItem = [...contentArrayFromService];
+    //       console.log(this.ContentListItem);
+    //     });
 
 
 
