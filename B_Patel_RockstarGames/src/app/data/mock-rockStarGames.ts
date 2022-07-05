@@ -1,5 +1,13 @@
 import { Content } from "../models/content";
 
+export const DEFAULTCONTENT: Content = {
+    id: -1,
+    author: 'No author',
+    imageLink: '',
+    title: 'No title',
+    type: 'Sports'
+}
+
 export const CONTENTLISTITEM: Content[] = [{
     id: 0,
     title: "Grand Theft Auto: Mission Pack 1 - London 1969",

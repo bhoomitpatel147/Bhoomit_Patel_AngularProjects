@@ -3,8 +3,10 @@
     <button (click)="checkID(authorValue.value)">Click me to find Content</button>
 </div>
 
+<app-content-card [contentItem]="contentItem" class="single-item-on-app-component"></app-content-card>
+
 <h1>New Content Card:</h1>
-<div *ngFor="let item of newContent; index as i; last as isLast;">
+<!-- <div *ngFor="let item of newContent; index as i; last as isLast;">
     <app-content-card [contentItem]="item" class="newSample">
         <img *ngIf="contentItem?.author; else elseImageLinkBlock" [src]="contentItem?.imageLink" />
         <ng-template #elseImageLinkBlock>
@@ -34,4 +36,4 @@
         </div>
     </app-content-card>
 
-</div>
+</div> -->

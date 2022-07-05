@@ -22,6 +22,22 @@ h1 {
     text-align: center;
 }
 
+a.details-button {
+    font-size: larger;
+    display: flex;
+    color: black;
+    background-color: green;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a.details-button:hover {
+    color: white;
+}
+
 .hashtags {
     color: black;
     font-size: 1.2em;

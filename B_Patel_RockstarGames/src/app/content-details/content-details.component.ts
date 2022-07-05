@@ -1,5 +1,7 @@
 import { Content } from '../models/content';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RockStarGamesService } from '../services/rock-star-games.service';
 
 
 @Component({
@@ -9,11 +11,32 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContentDetailsComponent implements OnInit {
 
-  @Input() contentItem?: Content;
+  id?: number;
+  contentItem?: Content;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private contentService: RockStarGamesService) {
+
+  }
+
+  ngOnInit() {
+    // this.id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.route.paramMap.subscribe(params => {
+      this.id = +(params.get('id') ?? 0); // uses the + unary operator
+
+      this.contentService.getContentItem(this.id).subscribe(singleItem => {
+
+        if (singleItem) {
+          this.contentItem = singleItem;
+        }
+        else {
+          this.router.navigate(['/contentNotFound']);
+        }
+      });
+    });
   }
 
 }

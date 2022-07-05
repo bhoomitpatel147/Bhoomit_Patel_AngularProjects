@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DEFAULTCONTENT } from '../data/mock-rockStarGames';
 import { Content } from '../models/content';
 import { RockStarGamesService } from '../services/rock-star-games.service';
 
@@ -10,20 +11,19 @@ import { RockStarGamesService } from '../services/rock-star-games.service';
 })
 export class SearchComponent implements OnInit {
 
-  @Input() contentItem?: Content;
-  newContent?: Content[];
+  contentItem?: Content = DEFAULTCONTENT;
 
   constructor(private contentService: RockStarGamesService) { }
 
   ngOnInit(): void {
     this.contentService.getContentItem(0).subscribe(content => {
-      this.newContent = content.slice(0);
+      this.contentItem = content;
     });
-    console.log(this.newContent);
+    console.log(this.contentItem);
   }
   checkID(id: string) {
     this.contentService.getContentItem(Number(id)).subscribe(content => {
-      this.newContent = content.slice(0);
+      this.contentItem = content;
     });
   }
 
