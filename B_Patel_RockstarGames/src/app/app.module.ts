@@ -10,6 +10,7 @@ import { ContentDetailsComponent } from './content-details/content-details.compo
 import { InvalidLinkComponent } from './invalid-link/invalid-link.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     HighlightImportantDataDirective,
     ContentDetailsComponent,
     InvalidLinkComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

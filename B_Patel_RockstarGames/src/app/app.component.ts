@@ -16,27 +16,18 @@ export class AppComponent implements OnInit {
 
   filterAuthor: string = "Default";
 
-  newContent?: Content[];
   @Input() contentItem?: Content;
 
 
 
 
-  constructor(private contentService: RockStarGamesService) {
+  constructor() {
 
   }
 
   ngOnInit(): void {
-    this.contentService.getContentItem(0).subscribe(content => {
-      this.newContent = content.slice(0);
-    });
-    console.log(this.newContent);
+
   }
 
-  checkID(id: string) {
-    this.contentService.getContentItem(Number(id)).subscribe(content => {
-      this.newContent = content.slice(0);
-    });
-  }
 
 }
