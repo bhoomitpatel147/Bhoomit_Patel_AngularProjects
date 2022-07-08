@@ -1,1 +1,67 @@
-<p>change-content works!</p>
+<div class="form">
+    <h1>Add Content</h1>
+    <label>
+        ID (for updating):
+        <input type="number" [(ngModel)]="contentItem.id">
+    </label>
+    <label>
+        Name:
+        <input [(ngModel)]="contentItem.title">
+    </label>
+    <label>
+        Type:
+        <input [(ngModel)]="contentItem.type">
+    </label>
+    <label>
+        Image URL:
+        <input [(ngModel)]="contentItem.imageLink">
+    </label>
+    <label>
+        Body:
+        <textarea [(ngModel)]="contentItem.body"></textarea>
+    </label>
+    <label>
+        Tags:
+        <input [(ngModel)]="tempTags">
+    </label>
+
+
+    <!-- <div class="login-box">
+    <h2>Add Content</h2>
+    <form>
+        <div class="user-box">
+            <input [(ngModel)]="contentItem.title">
+            <label>Title</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="contentItem.type">
+            <label>Type</label>
+        </div>
+        <div class="user-box">
+            <textarea [(ngModel)]="contentItem.body"></textarea>
+            <label>Body</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="contentItem.imageLink">
+            <label>Image Link</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="contentItem.author">
+            <label>Author</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="contentItem.hashtags">
+            <label>HashTags</label>
+        </div>
+
+    </form>
+</div> -->
+    <button (click)="+(contentItem.id || 'falsy') ? updateContentOnServer(): addContentToServer() ">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+    </button>
+
+</div>
