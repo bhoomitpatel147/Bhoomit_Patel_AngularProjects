@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Content } from '../models/content';
 import { empty, find, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class RockStarGamesService {
-
+export class RockStarGamesService implements OnInit {
+  status: string = '';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-type':
@@ -52,8 +52,13 @@ export class RockStarGamesService {
   // D
 
   deleteContentItem(id: number): Observable<Content> {
-    return this.http.delete<Content>("api/game" + id);
+    return this.http.delete<Content>("/api/game/" + id);
   }
+
+  ngOnInit() {
+
+  }
+
 }
 
 

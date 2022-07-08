@@ -38,7 +38,10 @@ export class ContentListComponent implements OnInit {
 
     this.contentService.getContentItem(1).subscribe(contentList => {
       console.log(contentList);
+
     });
+
+
 
     // A method that accepts a Content item as an input, adds the item to the array, and returns the array after the item is added
 
@@ -55,10 +58,10 @@ export class ContentListComponent implements OnInit {
 
     // A method that accepts a number, removes the item from the array that has the same id as the number parameter, and returns the Content item that was removed
 
-    this.contentService.deleteContentItem(5).subscribe((contentArrayFromService: Content) => {
-      contentArrayFromService;
-      // this.ContentListItem = contentArrayFromService
+    this.contentService.deleteContentItem(3).subscribe(contentArrayFromService => {
+      // contentArrayFromService;
       console.log(contentArrayFromService);
+      console.log(this.ContentListItem.length);
     });
 
 
