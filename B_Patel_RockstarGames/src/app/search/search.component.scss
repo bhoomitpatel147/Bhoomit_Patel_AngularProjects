@@ -1,0 +1,46 @@
+.search {
+    background-color: rgb(223, 223, 179);
+    padding: 20px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+    input {
+        width: 300px;
+        height: 30px;
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+
+    button {
+        width: 300px;
+        height: 30px;
+    }
+}
+
+
+
+
+h1 {
+    text-align: center;
+    background-color: rgb(14, 156, 244);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 2em;
+}
+
+.error {
+    color: #ba3939;
+    background: #ffe0e0;
+    border: 1px solid #a33a3a;
+    text-align: center;
+    width: fit-content;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.errorImg {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CONTENTLISTITEM } from '../data/mock-rockStarGames';
+import { CONTENTLISTITEM, DEFAULTCONTENT } from '../data/mock-rockStarGames';
 import { Content } from '../models/content';
 import { empty, Observable, of } from 'rxjs';
 
@@ -7,13 +7,7 @@ import { empty, Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class RockStarGamesService {
-  // defaultContent: Content = {
-  //   id: -1,
-  //   author: 'No author',
-  //   imageLink: '',
-  //   title: 'No title',
-  //   type: 'Sports'
-  // }
+
 
   constructor() { }
 
@@ -43,32 +37,44 @@ export class RockStarGamesService {
 
 
   // R
-  getContentItem(id: number): Observable<Content[]> {
-    const newArray: Array<Content> = CONTENTLISTITEM;
-
-    const arrayofids: Array<number> = newArray.map(item => item.id);
-    let result: boolean = false;
-
-    arrayofids.forEach(itemId => {
-      if (itemId === id) {
-        result = true;
+  getContentItem(id: number): Observable<Content> {
+    for (var i = 0; i < CONTENTLISTITEM.length; i++) // iterate through each chess champion
+    {
+      if (CONTENTLISTITEM[i].id === id) { // found the item
+        return of(CONTENTLISTITEM[i]);
       }
-    });
-    if (result)
-      return of(CONTENTLISTITEM.filter(individualID => {
-        return individualID.id == id;
-
-      }));
-    else {
-      alert(`We do not have any data for this ID: ${id}`);
-      return of([{
-        id: -1, author: '',
-        imageLink: '',
-        title: '',
-        type: ''
-      }]);
     }
+    return of(DEFAULTCONTENT); // need to return something if the content isn't there
   }
+
+
+  // getContentItem(id: number): Observable<Content[]> {
+  //   const newArray: Array<Content> = CONTENTLISTITEM;
+
+  //   const arrayofids: Array<number> = newArray.map(item => item.id);
+  //   let result: boolean = false;
+
+  //   arrayofids.forEach(itemId => {
+  //     if (itemId === id) {
+  //       result = true;
+  //     }
+  //   });
+  //   if (result)
+  //     return of(CONTENTLISTITEM.filter(individualID => {
+  //       return individualID.id == id;
+
+  //     }));
+  //   else {
+  //     alert(`We do not have any data for this ID: ${id}`);
+  //     return of([{
+  //       id: -1,
+  //       author: 'No Author',
+  //       imageLink: 'https://pbs.twimg.com/media/DDPKLHNVwAA87D5.jpg',
+  //       title: 'No Title',
+  //       type: 'To type'
+  //     }]);
+  //   }
+  // }
 
   // Update method
   updateContentItem(newContent: Content): Observable<Content[]> {

@@ -6,10 +6,6 @@
     padding: 10px;
     border-radius: 30px;
 
-    &.found {
-        border-width: 10px;
-        border-color: red;
-    }
 
 
 }
@@ -24,22 +20,6 @@ img {
 
 h1 {
     text-align: center;
-}
-
-a.details-button {
-    // font-size: larger;
-    display: flex;
-    color: black;
-    background-color: green;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 10px;
-    font-weight: bolder;
-    text-decoration: none;
-}
-
-a.details-button:hover {
-    color: white;
 }
 
 .hashtags {
@@ -61,9 +41,7 @@ a.details-button:hover {
     // border: 1px solid black;
     display: inline-block;
     padding: 5px;
-    // color: aliceblue;
     color: goldenrod;
-
     margin: 0px 0px 15px 0px;
     // background-color: rgb(29, 88, 136);
     // animation: blink 5s infinite;
@@ -124,4 +102,46 @@ a.details-button:hover {
 
 :host.is-last .author.backgroundColor {
     background-color: purple;
+}
+
+//Extra
+
+a.btn {
+    font-size: larger;
+    display: flex;
+    color: black;
+    background-color: orange;
+    width: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    font-weight: bolder;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px double black;
+}
+
+a.btn:hover {
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+
+.previousContent {
+    padding: 10px;
+    display: block;
+    background-color: blue;
+    color: white;
+    margin: 10px auto;
+    float: right;
+    text-align: center;
+    width: fit-content;
+    text-decoration: none;
+    border: 5px double honeydew;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.previousContent:hover {
+    background-color: red;
 }
