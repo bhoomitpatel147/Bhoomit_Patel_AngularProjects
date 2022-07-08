@@ -58,9 +58,14 @@ export class ContentListComponent implements OnInit {
 
     // A method that accepts a number, removes the item from the array that has the same id as the number parameter, and returns the Content item that was removed
 
-    this.contentService.deleteContentItem(3).subscribe(contentArrayFromService => {
-      // contentArrayFromService;
-      console.log(contentArrayFromService);
+    // this.contentService.deleteContentItem(3).subscribe(contentArrayFromService => {
+    //   // contentArrayFromService;
+    //   console.log(contentArrayFromService);
+    //   console.log(this.ContentListItem.length);
+    // });
+
+    this.contentService.deleteContentItem(2).subscribe((contentArrayFromService: Content) => {
+      // this.ContentListItem = [...contentArrayFromService];
       console.log(this.ContentListItem.length);
     });
 

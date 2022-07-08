@@ -15,6 +15,7 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { ChangeContentComponent } from './change-content/change-content.component';
 
 
 
@@ -29,6 +30,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     InvalidLinkComponent,
     SearchComponent,
     TopNavigationComponent,
+    ChangeContentComponent,
 
   ],
   imports: [
