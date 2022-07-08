@@ -12,6 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { TopNavigationComponent } from './top-navigation/top-navigation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+
+
 
 @NgModule({
   declarations: [
@@ -24,11 +29,17 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
     InvalidLinkComponent,
     SearchComponent,
     TopNavigationComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {
+      delay: 1000,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

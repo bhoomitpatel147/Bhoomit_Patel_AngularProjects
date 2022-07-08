@@ -30,5 +30,6 @@
 
 <a routerLink="/list" class="btn">Go back to Content List</a>
 <ng-container *ngIf="contentItem">
-    <a class="previousContent" *ngIf="contentItem.id > 0" [routerLink]="['/details', previousId]">Previous Content</a>
+    <a class="previousContent" *ngIf="+(contentItem.id || 'falsy') > 0" [routerLink]="['/details', previousId]">Previous
+        Content</a>
 </ng-container>
