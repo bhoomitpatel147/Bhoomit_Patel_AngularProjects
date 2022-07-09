@@ -6,6 +6,7 @@ import { ContentDetailsComponent } from './content-details/content-details.compo
 import { InvalidLinkComponent } from './invalid-link/invalid-link.component';
 import { SearchComponent } from './search/search.component';
 import { ChangeContentComponent } from './change-content/change-content.component';
+import { ContentWithoutFilterComponent } from './content-without-filter/content-without-filter.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'updateContent/:id',
     component: ChangeContentComponent
+  },
+  {
+    path: 'checkData',
+    component: ContentWithoutFilterComponent
   },
   {
     path: "**",

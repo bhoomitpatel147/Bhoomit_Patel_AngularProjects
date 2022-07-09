@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { ChangeContentComponent } from './change-content/change-content.component';
+import { ContentWithoutFilterComponent } from './content-without-filter/content-without-filter.component';
 
 
 
@@ -31,6 +32,7 @@ import { ChangeContentComponent } from './change-content/change-content.componen
     SearchComponent,
     TopNavigationComponent,
     ChangeContentComponent,
+    ContentWithoutFilterComponent,
 
   ],
   imports: [

@@ -30,7 +30,8 @@
             <input [(ngModel)]="tempTags" name="hashtags">
         </label>
 
-        <button (click)="+(contentItem.id || 'falsy') ? updateContentOnServer(): addContentToServer() ">
+        <button
+            (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer() ">
             <span></span>
             <span></span>
             <span></span>
