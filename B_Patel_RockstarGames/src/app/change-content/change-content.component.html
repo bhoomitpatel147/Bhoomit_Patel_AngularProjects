@@ -4,37 +4,38 @@
         ID (for updating):
         <input type="number" [(ngModel)]="contentItem.id">
     </label> -->
-    <label>
-        Title:
-        <input [(ngModel)]="contentItem.title">
-    </label>
-    <label>
-        Type:
-        <input [(ngModel)]="contentItem.type">
-    </label>
-    <label>
-        Author:
-        <input [(ngModel)]="contentItem.author">
-    </label>
-    <label>
-        Image URL:
-        <input [(ngModel)]="contentItem.imageLink">
-    </label>
-    <label>
-        Body:
-        <textarea [(ngModel)]="contentItem.body"></textarea>
-    </label>
-    <label>
-        Tags:
-        <input [(ngModel)]="tempTags">
-    </label>
+    <form (ngSubmit)="onClick(value)" #value="ngForm">
+        <label>
+            Title:
+            <input [(ngModel)]="contentItem.title" name="title">
+        </label>
+        <label>
+            Type:
+            <input [(ngModel)]="contentItem.type" name="type">
+        </label>
+        <label>
+            Author:
+            <input [(ngModel)]="contentItem.author" name="author">
+        </label>
+        <label>
+            Image URL:
+            <input [(ngModel)]="contentItem.imageLink" name="imageLink">
+        </label>
+        <label>
+            Body:
+            <textarea [(ngModel)]="contentItem.body" name="body"></textarea>
+        </label>
+        <label>
+            Tags:
+            <input [(ngModel)]="tempTags" name="hashtags">
+        </label>
 
-    <button (click)="+(contentItem.id || 'falsy') ? updateContentOnServer(): addContentToServer() ">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Add Content
-    </button>
-
+        <button (click)="+(contentItem.id || 'falsy') ? updateContentOnServer(): addContentToServer() ">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Add Content
+        </button>
+    </form>
 </div>

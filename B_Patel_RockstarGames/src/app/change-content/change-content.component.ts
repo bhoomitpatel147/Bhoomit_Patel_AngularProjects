@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../models/content';
+import { NgForm } from '@angular/forms';
 import { RockStarGamesService } from '../services/rock-star-games.service';
 
 @Component({
@@ -26,6 +27,8 @@ export class ChangeContentComponent implements OnInit {
       .subscribe(newContentFromServer =>
         console.log("Success! New content added", newContentFromServer)
       );
+    this.contentItem.title = '';
+
   }
   updateContentOnServer(): void {
     this.contentItem.hashtags = this.tempTags.split(", ");
@@ -33,6 +36,10 @@ export class ChangeContentComponent implements OnInit {
       .subscribe(() =>
         console.log("Content updated successfully", this.contentItem)
       );
+    this.contentItem.title = '';
   }
 
+  onClick(value: NgForm): void {
+    value.reset();
+  }
 }
