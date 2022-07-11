@@ -34,6 +34,10 @@ const routes: Routes = [
     component: ChangeContentComponent
   },
   {
+    path: 'updateContent',
+    component: ChangeContentComponent
+  },
+  {
     path: 'checkData',
     component: ContentWithoutFilterComponent
   },

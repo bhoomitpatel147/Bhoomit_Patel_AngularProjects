@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Content } from '../models/content';
 import { NgForm } from '@angular/forms';
 import { RockStarGamesService } from '../services/rock-star-games.service';
-import { ActivatedRoute, Router, Routes } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-change-content',
@@ -24,14 +24,24 @@ export class ChangeContentComponent implements OnInit {
   };
   tempTags: string = '';
   id?: number;
+  tempUrl: string = '';
 
+  idFromForm?: number = 0;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private contentService: RockStarGamesService) { }
+    private contentService: RockStarGamesService, private newRoute: Router) { }
 
+  ifFromFormFunc() {
+    this.router.navigate(['updateContent/' + this.contentItem.id]);
+    // this.updateContentOnServer();
+  }
 
   ngOnInit() {
+    this.tempUrl = this.router.url
+    if (this.tempUrl === '/updateContent') {
+      this.idFromForm = -1;
+    }
     this.route.paramMap.subscribe(params => {
 
       this.id = +(params.get('id') ?? -1); // uses the + unary operator
@@ -46,11 +56,13 @@ export class ChangeContentComponent implements OnInit {
           }
         },
           error => {
-            return this.router.navigateByUrl('contentNotFound');
+            console.log("Content Not found");
+            return this.router.navigateByUrl('addContent');
           }
         );
       }
     });
+
 
   }
 
@@ -75,4 +87,5 @@ export class ChangeContentComponent implements OnInit {
   onClick(value: NgForm): void {
     value.reset();
   }
+
 }

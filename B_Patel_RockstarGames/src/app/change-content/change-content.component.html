@@ -1,56 +1,71 @@
-<div class="form">
+<div class="idBlock" *ngIf="idFromForm == -1; else elseBlockForm">
+    <h1>Please enter the ID if you want to update the Data</h1>
+    <label>ID:
+        <input type="number" [(ngModel)]="contentItem.id" />
+    </label>
+    <button (click)="ifFromFormFunc()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Update Content
+    </button>
+</div>
+<ng-template #elseBlockForm>
+    <div class="form">
 
-    <h1 *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForH1">Update the content at ID:
-        {{contentItem.id}}</h1>
-    <ng-template #elseBlockForH1>
-        <h1>Add New Content</h1>
-    </ng-template>
-    <!-- <label>
+        <h1 *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForH1">Update the content at ID:
+            {{contentItem.id}}</h1>
+        <ng-template #elseBlockForH1>
+            <h1>Add New Content</h1>
+        </ng-template>
+        <!-- <label>
         ID (for updating):
         <input type="number" [(ngModel)]="contentItem.id">
     </label> -->
-    <form (ngSubmit)="onClick(value)" #value="ngForm">
-        <label>
-            Title:
-            <input [(ngModel)]="contentItem.title" name="title">
-        </label>
-        <label>
-            Type:
-            <input [(ngModel)]="contentItem.type" name="type">
-        </label>
-        <label>
-            Author:
-            <input [(ngModel)]="contentItem.author" name="author">
-        </label>
-        <label>
-            Image URL:
-            <input [(ngModel)]="contentItem.imageLink" name="imageLink">
-        </label>
-        <label>
-            Body:
-            <textarea [(ngModel)]="contentItem.body" name="body"></textarea>
-        </label>
-        <label>
-            Tags:
-            <input [(ngModel)]="tempTags" name="hashtags">
-        </label>
+        <form (ngSubmit)="onClick(value)" #value="ngForm">
+            <label>
+                Title:
+                <input [(ngModel)]="contentItem.title" name="title">
+            </label>
+            <label>
+                Type:
+                <input [(ngModel)]="contentItem.type" name="type">
+            </label>
+            <label>
+                Author:
+                <input [(ngModel)]="contentItem.author" name="author">
+            </label>
+            <label>
+                Image URL:
+                <input [(ngModel)]="contentItem.imageLink" name="imageLink">
+            </label>
+            <label>
+                Body:
+                <textarea [(ngModel)]="contentItem.body" name="body"></textarea>
+            </label>
+            <label>
+                Tags:
+                <input [(ngModel)]="tempTags" name="hashtags">
+            </label>
 
-        <button *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForButton"
-            (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer() ">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Update Content
-        </button>
-        <ng-template #elseBlockForButton>
-            <button (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer()
+            <button *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForButton"
+                (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer() ">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Update Content
+            </button>
+            <ng-template #elseBlockForButton>
+                <button (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer()
             ">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Add Content</button>
-        </ng-template>
-    </form>
-</div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Add Content</button>
+            </ng-template>
+        </form>
+    </div>
+</ng-template>
