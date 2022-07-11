@@ -1,5 +1,10 @@
 <div class="form">
-    <h1>Add Content</h1>
+
+    <h1 *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForH1">Update the content at ID:
+        {{contentItem.id}}</h1>
+    <ng-template #elseBlockForH1>
+        <h1>Add New Content</h1>
+    </ng-template>
     <!-- <label>
         ID (for updating):
         <input type="number" [(ngModel)]="contentItem.id">
@@ -30,13 +35,22 @@
             <input [(ngModel)]="tempTags" name="hashtags">
         </label>
 
-        <button
+        <button *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForButton"
             (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer() ">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Add Content
+            Update Content
         </button>
+        <ng-template #elseBlockForButton>
+            <button (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer()
+            ">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Add Content</button>
+        </ng-template>
     </form>
 </div>
