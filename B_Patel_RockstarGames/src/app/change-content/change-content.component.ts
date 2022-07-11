@@ -17,11 +17,11 @@ export class ChangeContentComponent implements OnInit {
     body: "",
     author: "",
   };
-  // updateItem: Content = {
-  //   title: "",
-  //   body: "",
-  //   author: ""
-  // };
+  updateItem: Content = {
+    title: "",
+    body: "",
+    author: ""
+  };
   tempTags: string = '';
   id?: number;
 
@@ -35,8 +35,7 @@ export class ChangeContentComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
 
-      this.id = +(params.get('id') ?? isFinite); // uses the + unary operator
-      console.log("new id" + this.id);
+      this.id = +(params.get('id') ?? 0); // uses the + unary operator
 
 
       this.contentService.getContentItem(this.id).subscribe(singleItem => {
@@ -45,15 +44,12 @@ export class ChangeContentComponent implements OnInit {
           // this.updateItem = singleItem;
           this.contentItem.id = this.id;
           console.log("new id" + this.id);
-
         }
-        else {
-          // console.log("Nononononono");
-          this.router.navigate(['/ojfsojo']);
+      },
+        error => {
+          return this.router.navigateByUrl('contentNotFound');
         }
-
-
-      });
+      );
     });
   }
 
@@ -69,7 +65,6 @@ export class ChangeContentComponent implements OnInit {
 
 
   updateContentOnServer(): void {
-    // this.updateItem = this.contentItem;
     this.contentItem.hashtags = this.tempTags.split(", ");
     this.contentService.updateContent(this.contentItem)
       .subscribe(() =>
