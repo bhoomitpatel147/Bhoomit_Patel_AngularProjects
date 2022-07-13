@@ -45,7 +45,7 @@ export class ChangeContentComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
 
       this.id = +(params.get('id') ?? -1); // uses the + unary operator
-      if (this.id != -1) {
+      if (this.id !== -1) {
         this.contentService.getContentItem(this.id).subscribe(singleItem => {
 
           if (singleItem) {
@@ -54,6 +54,7 @@ export class ChangeContentComponent implements OnInit {
             this.contentItem.id = this.id;
             console.log("new id" + this.id);
           }
+
         },
           error => {
             console.log("Content Not found");
