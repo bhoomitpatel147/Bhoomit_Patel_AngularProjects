@@ -50,6 +50,7 @@ export class ChangeContentComponent implements OnInit {
 
           if (singleItem) {
             this.contentItem = singleItem;
+            this.tempTags = JSON.stringify(singleItem.hashtags);
 
             this.contentItem.id = this.id;
             console.log("new id" + this.id);
