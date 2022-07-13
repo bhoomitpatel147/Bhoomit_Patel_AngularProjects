@@ -64,10 +64,10 @@ export class ContentListComponent implements OnInit {
     //   console.log(this.ContentListItem.length);
     // });
 
-    this.contentService.deleteContentItem(2).subscribe((contentArrayFromService: Content) => {
-      // this.ContentListItem = [...contentArrayFromService];
-      console.log(this.ContentListItem.length);
-    });
+    // this.contentService.deleteContentItem(2).subscribe((contentArrayFromService: Content) => {
+    //   // this.ContentListItem = [...contentArrayFromService];
+    //   console.log(this.ContentListItem.length);
+    // });
 
 
 

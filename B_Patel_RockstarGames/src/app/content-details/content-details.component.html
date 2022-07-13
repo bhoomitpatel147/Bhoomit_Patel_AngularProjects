@@ -19,11 +19,17 @@
     <h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData highLightCss='type'>Type:
         {{contentItem.type}}</h2>
 
+    <a class="changeContent" [routerLink]="['/updateContent', contentItem.id]" routerLinkActive="active">
+        Change Content
+    </a>
+
+
     <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
         <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
             #{{ hashtag }}
         </span>
     </div>
+
 
 
 </ng-container>
