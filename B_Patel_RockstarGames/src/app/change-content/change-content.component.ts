@@ -49,7 +49,7 @@ export class ChangeContentComponent implements OnInit {
         this.contentService.getContentItem(this.id).subscribe(singleItem => {
 
           if (singleItem) {
-            // this.updateItem = singleItem;
+            this.contentItem = singleItem;
 
             this.contentItem.id = this.id;
             console.log("new id" + this.id);
