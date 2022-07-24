@@ -25,24 +25,24 @@
         <form (ngSubmit)="onClick(value)" #value="ngForm">
             <mat-form-field color="primary" appearance="fill">
                 <mat-label>Title:</mat-label>
-                <input matInput [(ngModel)]="contentItem.title">
+                <input matInput [(ngModel)]="contentItem.title" name="title">
             </mat-form-field>
             <mat-form-field color="primary" appearance="fill">
                 <mat-label>Type:</mat-label>
-                <input matInput [(ngModel)]="contentItem.type">
+                <input matInput [(ngModel)]="contentItem.type" name="type">
             </mat-form-field>
 
             <mat-form-field color="primary" appearance="fill">
                 <mat-label>Author:</mat-label>
-                <input matInput [(ngModel)]="contentItem.author">
+                <input matInput [(ngModel)]="contentItem.author" name="author">
             </mat-form-field>
             <mat-form-field color="primary" appearance="fill">
                 <mat-label>Image URL:</mat-label>
-                <input matInput [(ngModel)]="contentItem.imageLink">
+                <input matInput [(ngModel)]="contentItem.imageLink" name="imageLink">
             </mat-form-field>
             <mat-form-field color="primary" appearance="fill">
                 <mat-label>Body:</mat-label>
-                <input matInput [(ngModel)]="contentItem.body">
+                <input matInput [(ngModel)]="contentItem.body" name="body">
             </mat-form-field>
             <mat-form-field color="primary" appearance="fill">
                 <mat-label>Tags:</mat-label>

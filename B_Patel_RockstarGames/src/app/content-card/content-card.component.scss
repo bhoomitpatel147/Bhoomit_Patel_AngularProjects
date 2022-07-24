@@ -1,9 +1,9 @@
 :host {
     display: block;
-    width: 780px;
+    width: 770px;
     border: 5px double blueviolet;
     margin: 10px auto;
-    padding: 10px;
+    padding: 40px;
     border-radius: 30px;
 
     &.found {
@@ -15,34 +15,37 @@
 }
 
 
+
+
+mat-card {
+    padding: 5px;
+    // background-color: #358597;
+
+}
+
 img {
-    width: 770px;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
+    margin: 0px;
 }
 
-h1 {
+mat-card-header {
     text-align: center;
-}
-
-a.details-button {
-    // font-size: larger;
-    display: flex;
-    color: black;
-    background-color: green;
-    width: fit-content;
     margin: 0 auto;
-    padding: 10px;
-    font-weight: bolder;
-    text-decoration: none;
+    padding: 0px;
+    background-color: pink;
 }
 
-a.details-button:hover {
-    color: white;
+button {
+    font-size: larger;
+
 }
 
-.hashtags {
+
+
+button:hover {
+    color: grey;
+}
+
+mat-card-footer.hashtags {
     color: black;
     font-size: 1.2em;
     font-weight: bold;
@@ -50,26 +53,21 @@ a.details-button:hover {
     display: flex;
     justify-content: space-evenly;
     background-color: chocolate;
-    padding: 5px;
+    padding: 10px;
     margin: 15px 5px;
     flex-direction: row;
     border-radius: 5px;
 }
 
 
-.type {
-    // border: 1px solid black;
+mat-card-subtitle.type {
     display: inline-block;
     padding: 5px;
-    // color: aliceblue;
     color: goldenrod;
-
-    margin: 0px 0px 15px 0px;
-    // background-color: rgb(29, 88, 136);
-    // animation: blink 5s infinite;
+    margin: 15px 0px 15px 0px;
 }
 
-.type.borderType {
+mat-card-subtitle.borderType {
     border: 5px double red;
 }
 
@@ -86,31 +84,31 @@ a.details-button:hover {
     }
 }
 
-@keyframes blink {
-    0% {
-        color: red;
-    }
+// // @keyframes blink {
+// //     0% {
+// //         color: red;
+// //     }
 
-    20% {
-        color: green;
-    }
+// //     20% {
+// //         color: green;
+// //     }
 
-    40% {
-        color: yellow;
-    }
+// //     40% {
+// //         color: yellow;
+// //     }
 
-    60% {
-        color: blue;
-    }
+// //     60% {
+// //         color: blue;
+// //     }
 
-    80% {
-        color: orange;
-    }
+// //     80% {
+// //         color: orange;
+// //     }
 
-    100% {
-        color: white;
-    }
-}
+// //     100% {
+// //         color: white;
+// //     }
+// // }
 
 
 
@@ -124,4 +122,13 @@ a.details-button:hover {
 
 :host.is-last .author.backgroundColor {
     background-color: purple;
+}
+
+mat-card-content,
+mat-card-title,
+mat-card-subtitle,
+mat-card-image,
+mat-card-header,
+mat-card-footer {
+    display: block;
 }

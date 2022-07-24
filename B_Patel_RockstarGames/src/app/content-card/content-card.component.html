@@ -1,42 +1,39 @@
-<ng-container *ngIf="contentItem">
+<div>
+    <mat-card *ngIf="contentItem">
+        <mat-card-header>
+            <mat-card-actions class="title" *ngIf="contentItem && contentItem.title" appHighlightImportantData
+                [color]="'purple'" highLightCss='title' mat-card-title>
+                <button mat-raised-button color="accent" class="details-button"
+                    [routerLink]="['/details', contentItem.id]" routerLinkActive="active">
+                    {{contentItem.title}}
+                </button>
 
-    <img (click)="clickedImage()" *ngIf="contentItem && contentItem.imageLink; else elseImageLinkBlock"
-        [src]="contentItem.imageLink" />
-    <ng-template #elseImageLinkBlock>
-        <img class="not-found" (click)="clickedImage()"
-            [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
-    </ng-template>
-    <h1 class="title" *ngIf="contentItem && contentItem.title" appHighlightImportantData [color]="'purple'"
-        highLightCss='title'>
-        <a class="details-button" [routerLink]="['/details', contentItem.id]" routerLinkActive="active">
-            {{contentItem.title}}
-        </a>
-
-    </h1>
+            </mat-card-actions>
 
 
+        </mat-card-header>
+
+
+        <img mat-card-image style="width: 770px" (click)="clickedImage()"
+            *ngIf="contentItem && contentItem.imageLink; else elseImageLinkBlock" [src]="contentItem.imageLink" />
+        <ng-template #elseImageLinkBlock>
+            <img class="not-found" (click)="clickedImage()" mat-card-image style="width: 770px"
+                [src]="'https://upload.wikimedia.org/wikipedia/commons/5/53/Rockstar_Games_Logo.svg'" />
+        </ng-template>
+
+
+        <mat-card-subtitle class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData
+            highLightCss='type' mat-card-subtitle>Type:
+            {{contentItem.type}}</mat-card-subtitle>
+
+        <mat-card-footer class="hashtags" *ngIf="contentItem && contentItem.hashtags">
+            <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
+                #{{ hashtag }}
+            </span>
+        </mat-card-footer>
 
 
 
-    <h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData highLightCss='type'>Type:
-        {{contentItem.type}}</h2>
 
-    <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
-        <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
-            #{{ hashtag }}
-        </span>
-        <!-- <span>{{ chessPlayer.hashtags.replace(cp => "<span>" + cp + "</span>").join(" ")}}</span> -->
-    </div>
-
-
-    <!-- <p class="hashtags" *ngIf="contentItem && contentItem.hashtags">{{contentItem.hashtags.join(' ')}}</p> -->
-
-    <!-- <ng-template #elseBlockNameIsWhateverYouWant>
-        <p class="not-found">No body content found</p>
-    </ng-template> -->
-    <!-- <div class="type">{{contentItem?.type}}</div> -->
-    <!-- <h2 *ngIf="this.contentItem2">
-  {{ contentItem2.name }}
-</h2> -->
-
-</ng-container>
+    </mat-card>
+</div>

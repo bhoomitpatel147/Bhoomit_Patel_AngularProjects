@@ -11,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$B_Patel_RockstarGames-primary: mat.define-palette(mat.$red-palette);
-$B_Patel_RockstarGames-accent: mat.define-palette(mat.$cyan-palette, A200, A100, A400);
+$B_Patel_RockstarGames-primary: mat.define-palette(mat.$purple-palette);
+$B_Patel_RockstarGames-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $B_Patel_RockstarGames-warn: mat.define-palette(mat.$red-palette);
