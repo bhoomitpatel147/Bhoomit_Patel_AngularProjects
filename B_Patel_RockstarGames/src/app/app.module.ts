@@ -16,6 +16,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { ChangeContentComponent } from './change-content/change-content.component';
 import { ContentWithoutFilterComponent } from './content-without-filter/content-without-filter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -42,6 +43,7 @@ import { ContentWithoutFilterComponent } from './content-without-filter/content-
       InMemoryDataService, {
       delay: 1000,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
