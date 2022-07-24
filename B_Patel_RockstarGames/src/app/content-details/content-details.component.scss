@@ -32,6 +32,7 @@ h1 {
     background-color: chocolate;
     padding: 5px;
     margin: 15px 5px;
+    clear: both;
     flex-direction: row;
     border-radius: 5px;
 }
@@ -94,6 +95,9 @@ h1 {
 
 :host.is-last .author.fontColor {
     color: springgreen;
+
+
+
 }
 
 :host.is-last .author.borderType {
@@ -144,4 +148,22 @@ a.btn:hover {
 
 .previousContent:hover {
     background-color: red;
+}
+
+
+a.changeContent {
+    display: block;
+    // width: fit-content;
+    float: right;
+    background-color: black;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+    clear: both;
+    color: white;
+    margin-right: 50px;
+}
+
+a.changeContent:hover {
+    color: red;
 }

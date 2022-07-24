@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InvalidLinkComponent } from './invalid-link.component';
+import { TopNavigationComponent } from './top-navigation.component';
 
-describe('InvalidLinkComponent', () => {
-  let component: InvalidLinkComponent;
-  let fixture: ComponentFixture<InvalidLinkComponent>;
+describe('TopNavigationComponent', () => {
+  let component: TopNavigationComponent;
+  let fixture: ComponentFixture<TopNavigationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InvalidLinkComponent ]
+      declarations: [ TopNavigationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InvalidLinkComponent);
+    fixture = TestBed.createComponent(TopNavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

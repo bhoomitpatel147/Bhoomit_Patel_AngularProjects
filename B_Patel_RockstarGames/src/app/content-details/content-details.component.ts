@@ -37,7 +37,7 @@ export class ContentDetailsComponent implements OnInit {
           this.contentItem = singleItem;
         }
         else {
-          this.router.navigate(['/contentNotFound']);
+          this.router.navigate(['**']);
         }
 
       });

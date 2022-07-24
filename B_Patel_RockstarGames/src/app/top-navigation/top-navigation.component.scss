@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(51, 51, 51);
+    // margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 50px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+
+
+/*Default Grid CSS*/
+
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {
+    width: 7.418%;
+}
+
+.col-2 {
+    width: 15.83%;
+}
+
+.col-3 {
+    width: 24.25%;
+}
+
+.col-4 {
+    width: 32.66%;
+}
+
+.col-5 {
+    width: 41.08%;
+}
+
+.col-6 {
+    width: 49.5%;
+}
+
+.col-7 {
+    width: 57.91%;
+}
+
+.col-8 {
+    width: 66.33%;
+}
+
+.col-9 {
+    width: 74.75%;
+}
+
+.col-10 {
+    width: 83.16%;
+}
+
+.col-11 {
+    width: 91.58%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    margin: 0 0 0 1%;
+}
+
+[class*="col-"]:first-child,
+[class*="col-"]:first-of-type {
+    margin:
+        0;
+}
+
+.row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    margin: 0 0 10px 0;
+    display: table;
+}
+
+@media all and (max-width: 639px) {
+    [class*="col-"] {
+        width: 100%;
+        margin: 1% 0;
+        background-color: #d8d8d8;
+        border: none;
+    }
+}
