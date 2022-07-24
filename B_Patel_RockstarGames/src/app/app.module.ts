@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentCardComponent } from './content-card/content-card.component';
@@ -20,8 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card'
-
-
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { MatIconModule } from "@angular/material/icon";
+import { MatToolbarModule } from "@angular/material/toolbar";
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +48,12 @@ import { MatCardModule } from '@angular/material/card'
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatIconModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

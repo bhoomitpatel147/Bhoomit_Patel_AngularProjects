@@ -16,6 +16,7 @@ export class HighlightImportantDataDirective {
   // private initialTypeBorder: string;
   // private initialTitleBgColor: string;
   private initialTextColor: string;
+  @HostBinding('class') className = '';
 
 
   @HostBinding('style.backgroundColor')

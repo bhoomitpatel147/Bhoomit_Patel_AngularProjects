@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { find } from 'rxjs';
 import { Content } from '../models/content';
 import { RockStarGamesService } from '../services/rock-star-games.service';
@@ -23,12 +24,16 @@ export class ContentListComponent implements OnInit {
   }
 
 
+
   constructor(private contentService: RockStarGamesService) {
 
     this.ContentListItem = []
   }
 
   ngOnInit(): void {
+
+
+
     this.contentService.getContent().subscribe((contentArrayFromService: Content[]) => {
       this.ContentListItem = contentArrayFromService;
     });
