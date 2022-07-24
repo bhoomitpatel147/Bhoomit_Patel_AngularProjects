@@ -1,13 +1,12 @@
 <div class="idBlock" *ngIf="idFromForm == -1; else elseBlockForm">
     <h1>Please enter the ID if you want to update the Data</h1>
-    <label>ID:
-        <input type="number" [(ngModel)]="contentItem.id" />
-    </label>
-    <button (click)="ifFromFormFunc()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+    <mat-form-field color="primary" appearance="fill">
+        <mat-label>ID for update Content:</mat-label>
+        <input type="number" matInput [(ngModel)]="contentItem.id">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="ifFromFormFunc()">
+
         Update Content
     </button>
 </div>
@@ -24,46 +23,41 @@
         <input type="number" [(ngModel)]="contentItem.id">
     </label> -->
         <form (ngSubmit)="onClick(value)" #value="ngForm">
-            <label>
-                Title:
-                <input [(ngModel)]="contentItem.title" name="title">
-            </label>
-            <label>
-                Type:
-                <input [(ngModel)]="contentItem.type" name="type">
-            </label>
-            <label>
-                Author:
-                <input [(ngModel)]="contentItem.author" name="author">
-            </label>
-            <label>
-                Image URL:
-                <input [(ngModel)]="contentItem.imageLink" name="imageLink">
-            </label>
-            <label>
-                Body:
-                <textarea [(ngModel)]="contentItem.body" name="body"></textarea>
-            </label>
-            <label>
-                Tags:
-                <input [(ngModel)]="tempTags" name="hashtags">
-            </label>
+            <mat-form-field color="primary" appearance="fill">
+                <mat-label>Title:</mat-label>
+                <input matInput [(ngModel)]="contentItem.title">
+            </mat-form-field>
+            <mat-form-field color="primary" appearance="fill">
+                <mat-label>Type:</mat-label>
+                <input matInput [(ngModel)]="contentItem.type">
+            </mat-form-field>
 
-            <button *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForButton"
+            <mat-form-field color="primary" appearance="fill">
+                <mat-label>Author:</mat-label>
+                <input matInput [(ngModel)]="contentItem.author">
+            </mat-form-field>
+            <mat-form-field color="primary" appearance="fill">
+                <mat-label>Image URL:</mat-label>
+                <input matInput [(ngModel)]="contentItem.imageLink">
+            </mat-form-field>
+            <mat-form-field color="primary" appearance="fill">
+                <mat-label>Body:</mat-label>
+                <input matInput [(ngModel)]="contentItem.body">
+            </mat-form-field>
+            <mat-form-field color="primary" appearance="fill">
+                <mat-label>Tags:</mat-label>
+                <input matInput [(ngModel)]="tempTags" name="hashtags">
+            </mat-form-field>
+
+
+            <button mat-raised-button color="primary"
+                *ngIf="+(contentItem.id || contentItem.id == 0 || 'falsy'); else elseBlockForButton"
                 (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer() ">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
                 Update Content
             </button>
             <ng-template #elseBlockForButton>
-                <button (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer()
+                <button mat-raised-button color="primary" (click)="+(contentItem.id || contentItem.id == 0 || 'falsy') ? updateContentOnServer(): addContentToServer()
             ">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
                     Add Content</button>
             </ng-template>
         </form>
