@@ -1,0 +1,5 @@
+<h2>Updated data without any filter</h2>
+<div class="card" *ngFor="let item of ContentListItem; index as i; last as isLast;">
+    <app-content-card [contentItem]="item" class="temp" [class.is-last]="isLast">
+    </app-content-card>
+</div>

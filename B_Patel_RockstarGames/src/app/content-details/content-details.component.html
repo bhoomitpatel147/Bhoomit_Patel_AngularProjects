@@ -19,6 +19,11 @@
     <h2 class="type" *ngIf="contentItem && contentItem.type" appHighlightImportantData highLightCss='type'>Type:
         {{contentItem.type}}</h2>
 
+    <a class="changeContent" [routerLink]="['/updateContent', contentItem.id]" routerLinkActive="active">
+        Change Content
+    </a>
+
+
     <div class="hashtags" *ngIf="contentItem && contentItem.hashtags">
         <span *ngFor="let hashtag of contentItem.hashtags" appHighlightImportantData highLightCss='tag'>
             #{{ hashtag }}
@@ -26,9 +31,11 @@
     </div>
 
 
+
 </ng-container>
 
 <a routerLink="/list" class="btn">Go back to Content List</a>
 <ng-container *ngIf="contentItem">
-    <a class="previousContent" *ngIf="contentItem.id > 0" [routerLink]="['/details', previousId]">Previous Content</a>
+    <a class="previousContent" *ngIf="+(contentItem.id || 'falsy') > 0" [routerLink]="['/details', previousId]">Previous
+        Content</a>
 </ng-container>

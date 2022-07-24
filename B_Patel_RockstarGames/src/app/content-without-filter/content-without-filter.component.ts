@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { find } from 'rxjs';
 import { Content } from '../models/content';
 import { RockStarGamesService } from '../services/rock-star-games.service';
 
 @Component({
-  selector: 'app-content-list',
-  templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.scss']
+  selector: 'app-content-without-filter',
+  templateUrl: './content-without-filter.component.html',
+  styleUrls: ['./content-without-filter.component.scss']
 })
-export class ContentListComponent implements OnInit {
+export class ContentWithoutFilterComponent implements OnInit {
 
   ContentListItem: Content[];
   // searchAuthorName: string;

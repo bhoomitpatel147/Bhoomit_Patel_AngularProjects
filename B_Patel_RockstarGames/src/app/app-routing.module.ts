@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentDetailsComponent } from './content-details/content-details.component';
-import { InvalidLinkComponent } from './invalid-link/invalid-link.component';
 import { SearchComponent } from './search/search.component';
+import { ChangeContentComponent } from './change-content/change-content.component';
+import { ContentWithoutFilterComponent } from './content-without-filter/content-without-filter.component';
 
 
 const routes: Routes = [
@@ -26,8 +26,25 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
+    path: 'addContent',
+    component: ChangeContentComponent
+  },
+  {
+    path: 'updateContent/:id',
+    component: ChangeContentComponent
+  },
+  {
+    path: 'updateContent',
+    component: ChangeContentComponent
+  },
+  {
+    path: 'checkData',
+    component: ContentWithoutFilterComponent
+  },
+  {
     path: 'contentNotFound',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+
   },
   {
     path: "**",

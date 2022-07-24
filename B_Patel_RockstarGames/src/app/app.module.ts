@@ -7,10 +7,17 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { TypeFilterPipe } from './pipes/type-filter.pipe';
 import { HighlightImportantDataDirective } from './directives/highlight-important-data.directive';
 import { ContentDetailsComponent } from './content-details/content-details.component';
-import { InvalidLinkComponent } from './invalid-link/invalid-link.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
+import { TopNavigationComponent } from './top-navigation/top-navigation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { ChangeContentComponent } from './change-content/change-content.component';
+import { ContentWithoutFilterComponent } from './content-without-filter/content-without-filter.component';
+
+
 
 @NgModule({
   declarations: [
@@ -20,13 +27,21 @@ import { SearchComponent } from './search/search.component';
     TypeFilterPipe,
     HighlightImportantDataDirective,
     ContentDetailsComponent,
-    InvalidLinkComponent,
     SearchComponent,
+    TopNavigationComponent,
+    ChangeContentComponent,
+    ContentWithoutFilterComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {
+      delay: 1000,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
