@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { ApplicationRef, Component, Input, OnInit } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
+import { concat, first, interval, Observable, of } from 'rxjs';
+import { LogUpdateService } from './log-update.service';
 import { Content } from "./models/content";
-import { RockStarGamesService } from './services/rock-star-games.service';
 
 
 @Component({
@@ -21,12 +22,24 @@ export class AppComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor(private logService: LogUpdateService,
+    private appRef: ApplicationRef,
+    // so we can check stability
+    private updates: SwUpdate
+    // so we can check for updates
+  ) {
 
   }
 
   ngOnInit(): void {
+    this.logService.init();
 
+    const appIsStable$ = this.appRef.isStable.pipe(
+      first(isStable => isStable === true));
+    const everyHour$ = interval(1 * 60 * 60 * 1000); const everyHourOnceAppIsStable$ =
+      concat(appIsStable$, everyHour$);
+    everyHourOnceAppIsStable$.subscribe(
+      () => this.updates.checkForUpdate());
   }
 
 
