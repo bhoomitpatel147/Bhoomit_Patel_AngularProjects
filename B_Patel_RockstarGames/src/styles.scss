@@ -32,15 +32,7 @@ $B_Patel_RockstarGames-theme: mat.define-light-theme((color: (primary: $B_Patel_
 @include mat.all-component-themes($B_Patel_RockstarGames-theme);
 
 
-$B_Patel_RockstarGames-dark-theme: mat.define-dark-theme((color: (primary: $B_Patel_RockstarGames-primary,
-        accent:$B_Patel_RockstarGames-accent,
-        warn: $B_Patel_RockstarGames-warn,
-      ),
-    ));
 
-.darkMode {
-  @include mat.all-component-colors($B_Patel_RockstarGames-dark-theme);
-}
 
 /* You can add global styles to this file, and also import other style files */
 
